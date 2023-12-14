@@ -35,7 +35,7 @@ import { CommonModule } from '@angular/common';
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #eee;
+    //background-color: #eee;
     div {
       margin: 0 1em 0 1em;
       display: flex;

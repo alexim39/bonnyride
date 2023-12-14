@@ -7,6 +7,8 @@ export const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'about-async', loadComponent: () => import('./about/about.component').then(c => c.AboutComponent) },
   { path: 'feedback', loadComponent: () => import('./feedback/feedback.component').then(c => c.FeedbackComponent) },
+  { path: 'book-later', loadComponent: () => import('./book-later/book-later.component').then(c => c.BookLaterComponent) },
+  { path: 'order-now', loadComponent: () => import('./order-now/order-now.component').then(c => c.OrderNowComponent) },
   { path: 'price-list', loadComponent: () => import('./price-list/price-list.component').then(c => c.PriceListComponent) },
   //{ path: 'booking', loadChildren: () => import('./portal/booking/booking-routes').then(c => c.BookingListRoutes) },
 

@@ -25,7 +25,7 @@ import { CommonModule } from '@angular/common';
 
           <article>
             <h1>
-            Call a cab service that's available in Bonny 247, day or night <br> <em></em> <br> <span>091 3031 1019</span>
+            Order a cab service that's available in Bonny 247, day or night <br> <em></em> <br> <span>091 3130 1019</span>
             </h1>
 
             <h3>
@@ -33,8 +33,10 @@ import { CommonModule } from '@angular/common';
             </h3>
 
             <div class="btn">
-              <a id="get-account" mat-raised-button href="tel:09130311019">CALL US NOW: 09130311019</a>
-              <a id="book-now" mat-raised-button color="accent" (click)="lunchWhatsAppGroup()">BOOK US NOW</a>
+              <a id="get-account" mat-raised-button routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ORDER NOW</a>
+              <!-- <a id="get-account" mat-raised-button href="tel:09130311019">CALL US NOW: 09130311019</a> -->
+              <a id="book-now" mat-raised-button color="accent" routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">BOOK FOR LATER</a>
+              <!-- <a id="book-now" mat-raised-button color="accent" (click)="lunchWhatsAppGroup()">BOOK US NOW</a> -->
             </div>
           </article>
 
