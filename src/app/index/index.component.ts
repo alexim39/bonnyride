@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,7 +25,7 @@ import { LoadingSpinnerService } from '../_common/services/loader/spinner.servic
   styles: [`
   `]
 })
-export class IndexComponent { 
+export class IndexComponent implements OnInit { 
   constructor(
     public loadingSpinnerService: LoadingSpinnerService
   ) {}

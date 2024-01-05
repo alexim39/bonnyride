@@ -22,10 +22,11 @@ import { FooterIntroComponent } from './footer.intro.component';
     </article>
 
     <aside>
-      <div class="courtesy">© 2023 Async Edge Limited. All Rights Reserved</div>
+      <div class="courtesy">&copy; {{currentYear }} Async Edge Limited. All Rights Reserved</div>
       <div class="policies">
-        <a href="#">T&C</a>
-        <a href="#">Privacy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Refund policy</a>
         <a href="#">Cookies</a>
         <a href="#">Security</a>
       </div>
@@ -99,4 +100,10 @@ import { FooterIntroComponent } from './footer.intro.component';
 
 `]
 })
-export class FooterComponent {}
+export class FooterComponent {
+  currentYear: number;
+
+  constructor() {
+    this.currentYear = new Date().getFullYear();
+  }
+}

@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { Component, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
 /**
  * @title Customer feedback
@@ -42,7 +42,7 @@ import {MatSelectModule} from '@angular/material/select';
 
         <mat-form-field appearance="outline">
           <mat-label>Phone Number</mat-label>
-          <input matInput>
+          <input matInput type="tel">
           <mat-hint>Phone number is optional for anonymity</mat-hint>
         </mat-form-field>
 
@@ -108,7 +108,6 @@ import {MatSelectModule} from '@angular/material/select';
             <button mat-raised-button color="primary">Submit</button>
 
         </mat-expansion-panel>
-
 
 
 
@@ -285,7 +284,7 @@ import {MatSelectModule} from '@angular/material/select';
 
    </section>
   `,
-styles: [`
+  styles: [`
 .head {
   background: #00838F;
   article {
@@ -392,6 +391,10 @@ styles: [`
 } */
 `]
 })
-export class FeedbackComponent {
+export class FeedbackComponent implements OnInit {
   panelOpenState = false;
+
+  constructor() { }
+
+  ngOnInit(): void {}
 }

@@ -1,0 +1,119 @@
+<section class="head">
+    <article>
+        <h2>Order A BonnyRide Cab</h2>
+        <!-- <h3>{{course.subTitle}}</h3> -->
+        <p>Use below form to complete your instant ride order</p>
+    </article>
+  </section>
+
+  <mat-progress-bar color="accent" mode="indeterminate" *ngIf="isSpinning"></mat-progress-bar>
+
+  <section class="body">
+
+    <div class="contents">
+
+        <article class="form-contents">
+    
+            <h3>Cab Order Form</h3>
+      
+            <form class="form" [formGroup]="form" (ngSubmit)="OrderNow(form.value)">
+      
+              <div class="names-field">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="names">
+                    <mat-error *ngIf="form.get('names')?.hasError('required')">
+                      Your name is required
+                      </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Surname</mat-label>
+                    <input matInput formControlName="surname" placeholder="Optional">
+                  </mat-form-field>
+                </div>
+      
+      
+              <mat-form-field appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNumber" [maxlength]="11">
+                <!-- <mat-hint>Phone number is optional for anonymity</mat-hint> -->
+                <mat-error *ngIf="form.get('phoneNumber')?.hasError('required')">
+                    Your phone number is required
+                </mat-error>
+                <mat-error *ngIf="form.get('phoneNumber')?.hasError('pattern')">
+                  Please enter a valid phone number
+                </mat-error>
+              </mat-form-field>
+      
+              <mat-form-field appearance="outline">
+                <mat-label>Enter a time</mat-label>
+                <input matInput type="time" formControlName="selectedTime">
+                <mat-hint>HH:MM AM/PM</mat-hint>
+                <mat-error *ngIf="form.get('selectedTime')?.hasError('required')">
+                    Please set time for the movement
+                </mat-error>
+              </mat-form-field>
+      
+              <mat-form-field appearance="outline">
+                <mat-label>Search pick-up to drop-off points</mat-label>
+                <input
+                  matInput
+                  placeholder="Select Pick-up to drop-off point"
+                  [formControl]="selectedPointsControl"
+                  [matAutocomplete]="auto"
+                  formControlName="selectedPoints"
+                />
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event)" [displayWith]="displayWith">
+                  <mat-option *ngFor="let point of filteredPickupPoints()" [value]="point">
+                    {{ point }}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="form.get('selectedPoints')?.hasError('required')">
+                    Please choose pickup and drop-off points
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Available Cars</mat-label>
+                <mat-select [(ngModel)]="selectedCarCategory" (selectionChange)="onCarCategoryChange()" formControlName="selectedCarCategory">
+                    <mat-option *ngFor="let car of availableCars" [value]="car">{{ car.make }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.get('selectedCarCategory')?.hasError('required')">
+                    Please choose a car
+                </mat-error>
+              </mat-form-field>
+      
+      
+              <div class="cost-msg" *ngIf="calculateTransportationCost() !== undefined && calculateTransportationCost() !== 0">
+                <p> The fare cost is: <span>{{calculateTransportationCost()  | currency:"NGN":"&#8358;"}}</span></p>
+              </div>
+      
+      
+              <div class="button-container">
+                <button mat-raised-button color="primary" [disabled]="form.invalid || isSpinning || !calculateTransportationCost()">Pay to order now</button>
+              </div>
+      
+            </form>
+            
+          </article>
+      
+          <!-- Display selected car details -->
+          <article class="car-display-area-contents">
+             <h3>Selected Car Details</h3>
+              <div *ngIf="selectedCarDetails">
+                <p>Make: {{ selectedCarDetails.make }}</p>
+                <p>Model: {{ selectedCarDetails.model }}</p>
+                <p>Year: {{ selectedCarDetails.year }}</p>
+                <p>License Plate: {{ selectedCarDetails.licensePlate }}</p>
+                <p>Driver Name: {{ selectedCarDetails.driverName }}</p>
+                <p>Driver Number: {{ selectedCarDetails.driverNumber }}</p>
+                <p>Current Location: {{ selectedCarDetails.currentLocation }}</p>
+                <p>
+                  <img [src]="selectedCarDetails.image">
+                </p>
+              </div>
+          </article> 
+
+    </div>
+    
+   </section>

@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <aside class="why-we-exist">
       <div>
-        <span>Call a cab any time, as we are available 247</span>
+        <span>Order a cab any time, as we are available 247</span>
         <span>Book a cab ahead and secure a convenient ride to your destination</span>
         <!-- <span> Bet Investment</span> -->
       </div>

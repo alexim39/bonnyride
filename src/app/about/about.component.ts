@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -42,4 +42,8 @@ import { MissionCorevaluesComponent } from './about.mission.component';
 }
   `],
 })
-export class AboutComponent {}
+export class AboutComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit(): void {}
+}

@@ -28,7 +28,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
         <article>
           <strong>Phone</strong>
-          <p> 091 3031 1019, <br>  <!-- 080 8038 6208<br> -->
+          <p> <a href="tel:09131301019">091 3130 1019</a> <br>  <!-- 080 8038 6208<br> -->
           <!-- <button mat-raised-button (click)="lunchWhatsAppGroup()">Chat on WhatsApp</button> -->
         </p>
 

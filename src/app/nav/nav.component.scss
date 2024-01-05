@@ -13,7 +13,7 @@ mat-toolbar {
     }
   
     a {
-      color: #00838F;
+      //color: #00838F;
       margin-left: 1em;
     }
   
@@ -63,7 +63,7 @@ mat-toolbar {
   
     .mobile-nav {
       display: flex;
-  
+      flex-wrap: wrap;  
     }
   
     .fa-bars {
