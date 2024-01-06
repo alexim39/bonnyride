@@ -16,14 +16,17 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         <article>
           <strong>Async Groups</strong>
           <p>
-            <a routerLink="about-async" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us</a>
+            <a routerLink="about-async" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us</a><br>
+            <a routerLink="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact Us</a>
           </p>
           <!-- <p> Techzo Technologies Office: <br>  No. 28 Mission Road by Chaly Class. Bonny Island, Rivers State.</p> -->
         </article>
 
-        <article>
+        <article><br>
           <strong>Email</strong>
-          <p> contacts&#64;async.ng, <br>  async.contacts&#64;gmail.com</p>
+          <p> contacts&#64;async.ng, <br>
+              async.contacts&#64;gmail.com
+          </p>
         </article>
 
         <article>
