@@ -10,7 +10,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'async-customer-dashboard',
+  selector: 'async-partner-dashboard',
   template: `
     <mat-sidenav-container class="sidenav-container">
       <mat-sidenav #drawer class="sidenav" fixedInViewport
@@ -72,7 +72,7 @@ import { AsyncPipe, NgIf } from '@angular/common';
     NgIf
   ]
 })
-export class CustomerDashboardComponent {
+export class PartnerDashboardComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)

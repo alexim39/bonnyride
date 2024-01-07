@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { Location } from '@angular/common';
 
 /**
  * @title Page not found component
@@ -9,7 +10,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'async-page-not-found',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, RouterModule],
+  imports: [MatButtonModule, MatIconModule, RouterModule,],
   styles: [`
 * {
   padding: 0;
@@ -37,16 +38,16 @@ import { RouterModule } from '@angular/router';
     width: 45%;
     background-position: center;
     h1{
-        font-size:80px; 
+        font-size: 80px; 
         text-align: center;
     }
  }
  
 
-.contant_box_404{ 
+.contant_box_404 { 
     margin-top:-50px;
     text-align: center;
-    h3{
+    h3 {
         font-size:30px; 
     }
     p {
@@ -54,6 +55,11 @@ import { RouterModule } from '@angular/router';
     }
     button {
         padding: 1em;
+    }
+    strong {
+        color: #00838f;
+        cursor: pointer;
+        text-decoration: underline;
     }
 }
 
@@ -73,11 +79,11 @@ import { RouterModule } from '@angular/router';
             padding: 1em;
         }
     }
-
 }
 
 `],
   template: `
+
 <section class="page_404">
     <div class="four_zero_four_bg">
         <h1 class="text-center">404</h1>
@@ -85,10 +91,18 @@ import { RouterModule } from '@angular/router';
 
     <div class="contant_box_404">
         <h3 class="h2">It looks like you have clicked on the wrong link</h3>
-        <p>The page you are looking for is not available!</p>
+        <!-- <p>The page you are looking for is not available!</p> -->
+        <p>You could use the <strong (click)="goBack()">browser back button </strong>to go back or click the button below to return to home page.</p>
         <button  mat-flat-button color="accent" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Go to Home</button>
     </div>
 </section>
+
 `,
 })
-export class PageNotFoundComponent {}
+export class PageNotFoundComponent {
+    constructor(private location: Location) {}
+
+    goBack(): void {
+        this.location.back();
+    }
+}

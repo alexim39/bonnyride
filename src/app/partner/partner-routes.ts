@@ -1,25 +1,22 @@
 import { Routes } from "@angular/router";
-/* import { CustomerSigninComponent } from "./customer/signin/customer-signin.component";
-import { CustomerSignupComponent } from "./customer/signup/customer-signup.component";
-import { CarownerSigninComponent } from "./car-owner/signin/car-ower-signin.component";
-import { CarownerSignupComponent } from "./car-owner/signup/car-ower-signup.component"; */
+import { PartnerDashboardComponent } from "./partner-dashboard/partner-dashboard.component";
 
-export const AuthRoutes: Routes = [
+
+export const PartnerRoutes: Routes = [
    {
       path: '',
-      redirectTo: 'car-owner'
+      redirectTo: 'dashboard'
    },
    {
-        path: 'customer',
+        path: 'dashboard',
         children: [
             {
                path: '',
-               redirectTo: 'signin'
+               component: PartnerDashboardComponent,
+               title:"Partner dashboard - profile & asset management"
             },
             /* {
-               path: 'signin',
-               component: CustomerSigninComponent,
-               title:"Customer authentication - Identification process"
+               
             },
             {
                path: 'signup',
@@ -28,24 +25,4 @@ export const AuthRoutes: Routes = [
             }, */
         ]
    },
-   {
-      path: 'car-owner',
-      children: [
-         {
-            path: '',
-            redirectTo: 'signin'
-         },
-         /* {
-            path: 'signin',
-            component: CarownerSigninComponent,
-            title:"Car owner authentication - Identification process"
-         },
-         {
-            path: 'signup',
-            component: CarownerSignupComponent,
-            title:"Car owner registration - Identification process"
-         }, */
-      ]
-   },
-
 ]
