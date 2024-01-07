@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
     
     <div class="page">
       <div class="login-panel">
-        <h1>Customer</h1>
+        <h1>Customer Sign in</h1>
         <h2>Log in into your account</h2>
         <form>
 

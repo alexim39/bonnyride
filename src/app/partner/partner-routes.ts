@@ -1,13 +1,13 @@
 import { Routes } from "@angular/router";
-import { CustomerSigninComponent } from "./customer/signin/customer-signin.component";
+/* import { CustomerSigninComponent } from "./customer/signin/customer-signin.component";
 import { CustomerSignupComponent } from "./customer/signup/customer-signup.component";
-import { PartnerSigninComponent } from "./partner/signin/partner-signin.component";
-import { PartnerSignupComponent } from "./partner/signup/partner-signup.component";
+import { CarownerSigninComponent } from "./car-owner/signin/car-ower-signin.component";
+import { CarownerSignupComponent } from "./car-owner/signup/car-ower-signup.component"; */
 
 export const AuthRoutes: Routes = [
    {
       path: '',
-      redirectTo: 'partner'
+      redirectTo: 'car-owner'
    },
    {
         path: 'customer',
@@ -16,7 +16,7 @@ export const AuthRoutes: Routes = [
                path: '',
                redirectTo: 'signin'
             },
-            {
+            /* {
                path: 'signin',
                component: CustomerSigninComponent,
                title:"Customer authentication - Identification process"
@@ -25,26 +25,26 @@ export const AuthRoutes: Routes = [
                path: 'signup',
                component: CustomerSignupComponent,
                title:"Customer registration - Identification process"
-            },
+            }, */
         ]
    },
    {
-      path: 'partner',
+      path: 'car-owner',
       children: [
          {
             path: '',
             redirectTo: 'signin'
          },
-         {
+         /* {
             path: 'signin',
-            component: PartnerSigninComponent,
-            title:"Partner authentication - Identification process"
+            component: CarownerSigninComponent,
+            title:"Car owner authentication - Identification process"
          },
          {
             path: 'signup',
-            component: PartnerSignupComponent,
-            title:"Partner registration - Identification process"
-         },
+            component: CarownerSignupComponent,
+            title:"Car owner registration - Identification process"
+         }, */
       ]
    },
 

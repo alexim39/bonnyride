@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
  * @title Car owner signup
  */
 @Component({
-    selector: 'async-car-owner-signup',
+    selector: 'async-partner-signup',
     standalone: true,
     imports: [MatButtonModule, MatDividerModule, MatIconModule, MatExpansionModule, MatFormFieldModule, MatInputModule, RouterModule],
     template: `
@@ -27,7 +27,7 @@ import { RouterModule } from '@angular/router';
     <div class="right-panel">
       <div class="panel-content">
         <form>
-          <h2>Car owner sign up</h2>
+          <h2>Partner sign up</h2>
 
           <div class="names-field">
             <mat-form-field appearance="outline">
@@ -61,7 +61,7 @@ import { RouterModule } from '@angular/router';
           <button mat-flat-button color="primary">Sign up</button>
         </form>
 
-        <p>Already have an account? <a routerLink="../../../auth/car-owner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in</a></p>
+        <p>Already have an account? <a routerLink="../../../auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in</a></p>
 
         <p>By Signing up, you agree to our <a href="">Terms of Service</a> and <a href=""> Privacy policy</a></p>
 
@@ -111,7 +111,7 @@ import { RouterModule } from '@angular/router';
 
 <div class="benefit">
   <div class="car-portal">
-    <h1>How our car-owner portal works</h1>
+    <h1>How our partner portal works</h1>
     <p class="sub-title">
     Operate your business in real-time with the most extensive and easy to use cab management software available on the market today.
     </p>
@@ -124,7 +124,7 @@ import { RouterModule } from '@angular/router';
     <ol>
       <li>
         <h2>Sign up</h2>
-        <p>It takes just 2 minutes to register a car-owner account.</p>
+        <p>It takes just 2 minutes to register a partner account.</p>
       </li>
       <li>
         <h2>Get approved</h2>
@@ -140,9 +140,9 @@ import { RouterModule } from '@angular/router';
   </div>
 </div>
 `,
-styleUrls: ["car-owner-signup.component.scss"]
+styleUrls: ["partner-signup.component.scss"]
 })
-export class CarownerSignupComponent {
+export class PartnerSignupComponent {
   hide = true;
 
   // Method to scroll to the top of the page

@@ -81,7 +81,7 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 <!-- dropdown menu for sign in -->
 <mat-menu #sign_in="matMenu">
   <button mat-menu-item routerLink="auth/customer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in as customer</button>
-  <button mat-menu-item routerLink="auth/car-owner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in as cab owner</button>
+  <button mat-menu-item routerLink="auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in as partner</button>
   <!-- <button mat-menu-item routerLink="price-list" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Price List</button>
   <button mat-menu-item routerLink="faq" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">FAQs</button> -->
 </mat-menu>

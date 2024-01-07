@@ -11,13 +11,13 @@ import { RouterModule } from '@angular/router';
  * @title Car owner signin
  */
 @Component({
-    selector: 'async-car-owner-signin',
+    selector: 'async-partner-signin',
     standalone: true,
     imports: [MatButtonModule, MatDividerModule, MatIconModule, MatExpansionModule, MatFormFieldModule, MatInputModule, RouterModule],
     template: `
     <div class="page">
       <div class="login-panel">
-        <h1>Car Owner</h1>
+        <h1>Partner Sign in</h1>
         <h2>Log in into your account</h2>
         <form>
 
@@ -45,7 +45,7 @@ import { RouterModule } from '@angular/router';
         <div class="line"></div>
 
         <p>
-          Not a Bonnyride car owner yet? <a routerLink="../../../auth/car-owner/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up</a>
+          Not a Bonnyride car owner yet? <a routerLink="../../../auth/partner/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up</a>
         </p>
       </div>
     </div>
@@ -87,6 +87,6 @@ import { RouterModule } from '@angular/router';
 }
   `]
 })
-export class CarownerSigninComponent {
+export class PartnerSigninComponent {
   hide = true;
 }
