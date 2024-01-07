@@ -8,11 +8,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AsyncPipe, NgIf } from '@angular/common';
+import { LogoComponent } from 'src/app/_common/logo.component';
 
 @Component({
   selector: 'async-customer-dashboard',
+  standalone: true,
+  imports: [ MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule, MatIconModule, AsyncPipe, NgIf, LogoComponent ],
   template: `
     <mat-sidenav-container class="sidenav-container">
+
       <mat-sidenav #drawer class="sidenav" fixedInViewport
           [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
           [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -24,6 +28,7 @@ import { AsyncPipe, NgIf } from '@angular/common';
           <a mat-list-item href="#">Link 3</a>
         </mat-nav-list>
       </mat-sidenav>
+
       <mat-sidenav-content>
         <mat-toolbar color="primary">
           <button
@@ -34,43 +39,35 @@ import { AsyncPipe, NgIf } from '@angular/common';
             *ngIf="isHandset$ | async">
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
           </button>
-          <span>async-edge</span>
+            <async-logo [color]="'white'"></async-logo>
         </mat-toolbar>
         <!-- Add Content Here -->
+        <section class="content-area">
+          some contents here
+        </section>
       </mat-sidenav-content>
+
     </mat-sidenav-container>
     
   `,
   styles: [`
-    .sidenav-container {
-      height: 100%;
-    }
-    
-    .sidenav {
-      width: 200px;
-    }
-    
-    .sidenav .mat-toolbar {
-      background: inherit;
-    }
-    
-    .mat-toolbar.mat-primary {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-    
+.sidenav-container {
+  height: 100%;
+  .sidenav {
+    width: 200px;
+  }
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}    
   `],
-  standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    AsyncPipe,
-    NgIf
-  ]
+
 })
 export class CustomerDashboardComponent {
   private breakpointObserver = inject(BreakpointObserver);
