@@ -9,23 +9,35 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { LogoComponent } from 'src/app/_common/logo.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'async-partner-dashboard',
   standalone: true,
-  imports: [ MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule, MatIconModule, AsyncPipe, NgIf, LogoComponent],
+  imports: [ MatToolbarModule, MatButtonModule, RouterModule, MatSidenavModule, MatListModule, MatIconModule, AsyncPipe, NgIf, LogoComponent],
   template: `
     <mat-sidenav-container class="sidenav-container">
       <mat-sidenav #drawer class="sidenav" fixedInViewport
           [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
           [mode]="(isHandset$ | async) ? 'over' : 'side'"
           [opened]="(isHandset$ | async) === false">
-        <mat-toolbar>Menu</mat-toolbar>
+
+        <mat-toolbar class="profile">
+          <div class="card">
+            <img src="assets/img/sample-pr.PNG">
+            <h1>John Doe</h1>
+            <p class="title">CEO & Founder, Example</p>
+          </div>
+        </mat-toolbar>
+
         <mat-nav-list>
-          <a mat-list-item href="#">Link 1</a>
-          <a mat-list-item href="#">Link 2</a>
-          <a mat-list-item href="#">Link 3</a>
+          <a mat-list-item routerLink="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-dashboard"></i> Dashboard</a>
+          <a mat-list-item routerLink="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-taxi"></i> Add Car</a>
+          <a mat-list-item routerLink="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-dollar"></i> Payment</a>
+          <a mat-list-item routerLink="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-steam"></i> Work preferences</a>
+          <a mat-list-item routerLink="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-cog"></i> Settings</a>
         </mat-nav-list>
+        
       </mat-sidenav>
       <mat-sidenav-content>
         <mat-toolbar color="primary">
@@ -46,25 +58,7 @@ import { LogoComponent } from 'src/app/_common/logo.component';
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,
-  styles: [`
-    .sidenav-container {
-      height: 100%;
-      .sidenav {
-        width: 200px;
-      }
-      
-      .sidenav .mat-toolbar {
-        background: inherit;
-      }
-      
-      .mat-toolbar.mat-primary {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-      }
-    }
-    
-  `],
+  styleUrls: ['partner-dashboard.component.scss'],
 })
 export class PartnerDashboardComponent {
   private breakpointObserver = inject(BreakpointObserver);
