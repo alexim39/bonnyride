@@ -38,6 +38,7 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
       <span class="spacer"></span>
       <!-- Desktop View Menu -->
+      <a class="view-on-desktop" color="primary" mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
       <a class="view-on-desktop" color="primary" mat-flat-button [matMenuTriggerFor]="cab_order">Order Cab <i class="fa fa-angle-down"></i></a>
       <a class="view-on-desktop" color="accent" mat-flat-button [matMenuTriggerFor]="sign_in">Sign in <i class="fa fa-angle-down"></i></a>
       <a class="view-on-desktop" mat-button [matMenuTriggerFor]="help_support">Help & Support <i class="fa fa-angle-down"></i></a>
@@ -56,7 +57,8 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
       <mat-toolbar-row class="mobile-nav" id="mobile-nav" *ngIf="showMobileNav">
         <!-- Mobile View Menu -->
-        <a mat-button color="primary" [matMenuTriggerFor]="cab_order">Order Cab <i class="fa fa-angle-down"></i></a>
+        <a mat-button color="primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a mat-button color="primary" [matMenuTriggerFor]="cab_order">Order <i class="fa fa-angle-down"></i></a>
         <a mat-button color="accent" [matMenuTriggerFor]="sign_in">Sign in <i class="fa fa-angle-down"></i></a>
         <a mat-button [matMenuTriggerFor]="help_support">Support <i class="fa fa-angle-down"></i></a>
         

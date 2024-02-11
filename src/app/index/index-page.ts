@@ -11,16 +11,17 @@ import { WhyWeExistComponent } from './why-we-exist/why-we-exist.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { LoadingSpinnerService } from '../_common/services/loader/spinner.service';
 import { FooterComponent } from '../footer/footer.component';
-
+import { BeOurPartnerComp } from './be-our-partner/be-our-partner.component';
 
 @Component({
   selector: 'async-index-page',
   standalone: true,
-  imports: [MatToolbarModule, FooterComponent,  RouterModule, MatIconModule, MatButtonModule, MatTooltipModule, MatFormFieldModule, MatInputModule, BannerComponent, WhyWeExistComponent, TestimonialsComponent],
+  imports: [MatToolbarModule, FooterComponent, RouterModule, MatIconModule, MatButtonModule, MatTooltipModule, MatFormFieldModule, MatInputModule, BannerComponent, WhyWeExistComponent, TestimonialsComponent, BeOurPartnerComp],
   template: `
 
     <async-index-banner></async-index-banner>
     <async-index-why-we-exist></async-index-why-we-exist>
+    <async-be-our-partner></async-be-our-partner>
     <async-index-testimonials></async-index-testimonials>
   `,
   styles: [`

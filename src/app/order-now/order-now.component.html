@@ -18,7 +18,7 @@
       
             <form class="form" [formGroup]="form" (ngSubmit)="OrderNow(form.value)">
       
-              <div class="names-field">
+              <!-- <div class="names-field">
                   <mat-form-field appearance="outline">
                     <mat-label>Name</mat-label>
                     <input matInput formControlName="names">
@@ -30,7 +30,15 @@
                     <mat-label>Surname</mat-label>
                     <input matInput formControlName="surname" placeholder="Optional">
                   </mat-form-field>
-                </div>
+                </div> -->
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input matInput formControlName="names">
+                  <mat-error *ngIf="form.get('names')?.hasError('required')">
+                    Your name is required
+                    </mat-error>
+                </mat-form-field>
       
       
               <mat-form-field appearance="outline">
@@ -102,6 +110,7 @@
              <h3>Selected Car Details</h3>
               <div *ngIf="selectedCarDetails">
                 <p>Make: {{ selectedCarDetails.make }}</p>
+                <p>Color: {{ selectedCarDetails.color }}</p>
                 <p>Model: {{ selectedCarDetails.model }}</p>
                 <p>Year: {{ selectedCarDetails.year }}</p>
                 <p>License Plate: {{ selectedCarDetails.licensePlate }}</p>

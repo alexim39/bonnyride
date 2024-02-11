@@ -3,6 +3,7 @@ export interface CarDetails {
     make: string;
     model: string;
     year: number;
+    color: string;
     licensePlate: string;
     driverName: string;
     driverNumber: string;

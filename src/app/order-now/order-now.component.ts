@@ -104,8 +104,8 @@ export class OrderNowComponent implements OnInit, OnDestroy {
     this.initializePickupPoints(); // Move the initialization logic here
 
     this.availableCars = [
-      { id: '123', make: 'Toyota', model: 'Corolla', year: 2022, licensePlate: 'ABC123', driverName: 'John Doe', driverNumber: '1234567890', currentLocation: 'City Center', image: 'assets/img/reg_cars/slazzer.jpg' },
-      { id: '456', make: 'BMW', model: 'Xyia', year: 2012, licensePlate: 'ABC456', driverName: 'John Doe', driverNumber: '68754444365', currentLocation: 'Bonny Island', image: 'assets/img/reg_cars/slazzer.jpg' },
+      { id: '123', make: 'Toyota', model: 'Corolla', year: 2022, color: 'red', licensePlate: 'ABC123', driverName: 'John Doe', driverNumber: '1234567890', currentLocation: 'City Center', image: 'assets/img/reg_cars/slazzer.jpg' },
+      { id: '456', make: 'BMW', model: 'Xyia', year: 2012, color: 'black', licensePlate: 'ABC456', driverName: 'John Doe', driverNumber: '68754444365', currentLocation: 'Bonny Island', image: 'assets/img/reg_cars/slazzer.jpg' },
       // Add more cars as needed
     ];
 
