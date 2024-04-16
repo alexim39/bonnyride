@@ -28,7 +28,10 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
   imports: [MatToolbarModule, BreadcrumbComponent, LoadingSpinnerComponent, MatDialogModule, RouterModule, MatIconModule, MatButtonModule, MatTooltipModule, LogoComponent, CommonModule, MatMenuModule, NotificationBannerComponent, HttpClientModule],
   template: `
   <async-loading-spinner *ngIf="loadingSpinnerService.isShowing()"></async-loading-spinner>
-  <!-- THIS IS A TEMPORARY NOTIFICATION BANNER - FOR TRAILING EVENT -->
+  <!--
+    DO NOT REMOVE
+   THIS IS A TEMPORARY NOTIFICATION BANNER - FOR TRAILING EVENT 
+  -->
   <!-- <async-notification-banner></async-notification-banner> -->
 
 
@@ -39,6 +42,7 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
       <span class="spacer"></span>
       <!-- Desktop View Menu -->
       <a class="view-on-desktop" color="primary" mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a class="view-on-desktop" color="primary" mat-button [matMenuTriggerFor]="services">Services <i class="fa fa-angle-down"></i></a>
       <a class="view-on-desktop" color="primary" mat-flat-button [matMenuTriggerFor]="cab_order">Order Cab <i class="fa fa-angle-down"></i></a>
       <a class="view-on-desktop" color="accent" mat-flat-button [matMenuTriggerFor]="sign_in">Sign in <i class="fa fa-angle-down"></i></a>
       <a class="view-on-desktop" mat-button [matMenuTriggerFor]="help_support">Help & Support <i class="fa fa-angle-down"></i></a>
@@ -51,25 +55,33 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
       <i matTooltip="Toggle dark to light mode" class="fa fa-sun-o" (click)="toggleTheme()" *ngIf="isDarkMode"></i>
       <!-- Mobile view toggler -->
       <i class="fa fa-bars" (click)="toggleMobileNav()" id="toggle"></i>
+    </mat-toolbar-row>
 
-      </mat-toolbar-row>
 
-
-      <mat-toolbar-row class="mobile-nav" id="mobile-nav" *ngIf="showMobileNav">
-        <!-- Mobile View Menu -->
-        <a mat-button color="primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a mat-button color="primary" [matMenuTriggerFor]="cab_order">Order <i class="fa fa-angle-down"></i></a>
-        <a mat-button color="accent" [matMenuTriggerFor]="sign_in">Sign in <i class="fa fa-angle-down"></i></a>
-        <a mat-button [matMenuTriggerFor]="help_support">Support <i class="fa fa-angle-down"></i></a>
+    <mat-toolbar-row class="mobile-nav" id="mobile-nav" *ngIf="showMobileNav" style="margin-bottom: 1.5em !important;">
+      <!-- Mobile View Menu -->
+      <a mat-button color="primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a mat-button color="primary" [matMenuTriggerFor]="services">Services <i class="fa fa-angle-down"></i></a>
+      <a mat-button color="primary" [matMenuTriggerFor]="cab_order">Order <i class="fa fa-angle-down"></i></a>
+      <a mat-button color="accent" [matMenuTriggerFor]="sign_in">Sign in <i class="fa fa-angle-down"></i></a>
+      <a mat-button [matMenuTriggerFor]="help_support">Support <i class="fa fa-angle-down"></i></a>
         
       <span class="spacer"></span>
     </mat-toolbar-row>
+
    </mat-toolbar>
 
 <!-- dropdown menu for Order Cab -->
 <mat-menu #cab_order="matMenu">
   <button mat-menu-item routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Order instant ride</button>
   <button mat-menu-item routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Book cab for later</button>
+</mat-menu>
+
+<!-- dropdown menu for services -->
+<mat-menu #services="matMenu">
+  <button mat-menu-item routerLink="cab-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Cab Services</button>
+  <button mat-menu-item routerLink="courier-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courier Services</button>
+  <button mat-menu-item routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tow Truck Services</button>
 </mat-menu>
 
 <!-- dropdown menu for Help & Support -->
@@ -82,10 +94,18 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
 <!-- dropdown menu for sign in -->
 <mat-menu #sign_in="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="customer">Customer</button>
+  <button mat-menu-item [matMenuTriggerFor]="partner">Partner</button>
+</mat-menu>
+
+<!-- sub dropdown menu for sign in -->
+<mat-menu #customer="matMenu">
   <button mat-menu-item routerLink="auth/customer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in as customer</button>
+  <button mat-menu-item routerLink="auth/customer/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up as partner</button>
+</mat-menu>
+<mat-menu #partner="matMenu">
   <button mat-menu-item routerLink="auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in as partner</button>
-  <!-- <button mat-menu-item routerLink="price-list" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Price List</button>
-  <button mat-menu-item routerLink="faq" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">FAQs</button> -->
+  <button mat-menu-item routerLink="auth/partner/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up as partner</button>
 </mat-menu>
 
   `,

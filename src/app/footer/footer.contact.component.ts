@@ -16,24 +16,24 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         <article>
           <strong>Async Groups</strong>
           <p>
-            <a routerLink="about-async" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us</a><br>
-            <a routerLink="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact Us</a>
+            <a routerLink="about-async" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><strong>About Us</strong></a><br><br>
+            <a routerLink="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><strong>Contact Us</strong></a>
           </p>
-          <!-- <p> Techzo Technologies Office: <br>  No. 28 Mission Road by Chaly Class. Bonny Island, Rivers State.</p> -->
+          <p> <strong>Head Office:</strong> <br>  54 Nkpor, Rumuolumeni. Port Harcourt, Rivers State.</p>
+          <p> <strong>Bonny Island: </strong><br>  87 MG Hart Lane, Wilbros road. Bonny Island, Rivers State.</p>
         </article>
 
         <article><br>
           <strong>Email</strong>
-          <p> contacts&#64;async.ng, <br>
-              async.contacts&#64;gmail.com
+          <p> 
+            <a>contacts&#64;async.ng,</a> <br><br> 
+            <a>async.contacts&#64;gmail.com </a>
           </p>
         </article>
 
         <article>
           <strong>Phone</strong>
-          <p> <a href="tel:09131301019">091 3130 1019</a> <br>  <!-- 080 8038 6208<br> -->
-          <!-- <button mat-raised-button (click)="lunchWhatsAppGroup()">Chat on WhatsApp</button> -->
-        </p>
+          <p> <a href="tel:09131301019"><strong>091 3130 1019</strong></a> </p>
 
         </article>
 
@@ -51,6 +51,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
           a {
             text-decoration: none;
             color: white;
+            margin-left: 2em;
+            border-bottom: 1px solid gray;
           }
         }
         button {

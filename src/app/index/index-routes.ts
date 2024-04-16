@@ -100,7 +100,19 @@ export const IndexRoutes: Routes = [
                       ]
                    },
                 ]
-            }
+            },
+            { path: 'cab-services', 
+                loadComponent: () => import('../services/cab-services.component').then(c => c.CabServicesComponent),
+                title: "Cab services - Book/Order a cab"
+            },
+            { path: 'tow-services', 
+                loadComponent: () => import('../services/cab-services.component').then(c => c.CabServicesComponent),
+                title: "Tow truck services - Book/Order a cab"
+            },
+            { path: 'courier-services', 
+                loadComponent: () => import('../services/cab-services.component').then(c => c.CabServicesComponent),
+                title: "Courier services - Book/Order a cab"
+            },
         ]
     },
 

@@ -54,8 +54,7 @@ import { RouterModule } from '@angular/router';
   `,
     styles: [`
 .page {
-  background: #eee;
-  height: 60vh;
+  //background: #eee;
   display: flex;
   justify-content: center;
   text-align: center;

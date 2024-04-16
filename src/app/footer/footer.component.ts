@@ -8,16 +8,18 @@ import { LogoComponent } from '../_common/logo.component';
 import { FooterContactComponent } from './footer.contact.component';
 import { FooterConnectedComponent } from './footer.connected.component';
 import { FooterIntroComponent } from './footer.intro.component';
+import { FooterServiceComponent } from './footer.service.component';
 
 @Component({
   selector: 'async-footer',
   standalone: true,
-  imports: [MatToolbarModule, RouterModule, MatIconModule, MatButtonModule, MatTooltipModule, LogoComponent, FooterContactComponent, FooterConnectedComponent, FooterIntroComponent],
+  imports: [MatToolbarModule, FooterServiceComponent, RouterModule, MatIconModule, MatButtonModule, MatTooltipModule, LogoComponent, FooterContactComponent, FooterConnectedComponent, FooterIntroComponent],
   template: `
    <footer>
     <article>
       <async-footer-intro></async-footer-intro>
       <async-footer-contact></async-footer-contact>
+      <async-footer-service></async-footer-service>
       <async-footer-connected></async-footer-connected>
     </article>
 

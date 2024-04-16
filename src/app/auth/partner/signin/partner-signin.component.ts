@@ -45,15 +45,14 @@ import { RouterModule } from '@angular/router';
         <div class="line"></div>
 
         <p>
-          Not a Bonnyride car owner yet? <a routerLink="../../../auth/partner/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up</a>
+          Not a Bonnyride partner yet? <a routerLink="../../../auth/partner/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up</a>
         </p>
       </div>
     </div>
   `,
     styles: [`
 .page {
-  background: #eee;
-  height: 60vh;
+  //background: #eee;
   display: flex;
   justify-content: center;
   text-align: center;
