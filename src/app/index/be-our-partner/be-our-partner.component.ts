@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { Router, RouterModule } from '@angular/router';
 
 /**
  * @title Be Our Partner Page
  */
 @Component({
     selector: 'async-be-our-partner',
-    imports: [MatListModule, MatDividerModule],
+    imports: [MatListModule, MatDividerModule, RouterModule],
     standalone: true,
     styles: [`
         .partner-container {
@@ -53,6 +54,14 @@ import { MatListModule } from '@angular/material/list';
           font-family: system-ui;
           width: 70%;
         }
+        .partner-signup {
+          margin-top: 2em;
+          a {
+            color:#ffab40;
+            text-decoration: none;
+            text-align: right;
+          }
+        }
       }
     }
 
@@ -88,10 +97,10 @@ import { MatListModule } from '@angular/material/list';
     </div>
 
     <div class="text-content">
-    <h1>
-        <div class="title"> Be Our Partner</div>      
-        <div class="word"> Drive when you want,<br> and earn as much as you need.</div> 
-    </h1>
+      <h1>
+          <div class="title"> Be Our Partner With Your Vehicle</div>      
+          <div class="word"> Drive when you want,<br> and earn as much as you need.</div> 
+      </h1>
 
         <p>
             Sign-up below to Join Bonnyride now. You drive and earn with your car at your own schedule.
@@ -102,6 +111,10 @@ import { MatListModule } from '@angular/material/list';
             You can partner with Bonnyride by registering the car on our platform and hire a driver from our pool of trained drivers who can handle your car with care and make weekly/monthly returns to you.           
         </p>
 
+        <div class="partner-signup">
+          <a mat-button color="accent" routerLink="auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Sign up Now <i class="fa fa-angle-double-right"></i></a>
+        </div>
+
         <!-- <p>
         At Async Groups, we’re not just providing services; we’re building relationships based on trust and mutual growth. We’re proud of the work we’ve done, and we’re excited about what the future holds. 
         Because at Async Groups, we believe that our success is tied to the success of our customers.            
@@ -111,4 +124,9 @@ import { MatListModule } from '@angular/material/list';
 </div>
   `
 })
-export class BeOurPartnerComp { }
+export class BeOurPartnerComp {
+  // scroll to top when clicked
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}

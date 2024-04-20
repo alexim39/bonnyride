@@ -15,14 +15,15 @@ import { CommonModule } from '@angular/common';
   template: `
     <aside class="why-we-exist">
       <div>
-        <span>Call for our services any time, as we are available 247</span>
-        <span>Book a cab and secure a convenient ride to your destination</span>
+        <span class="mark"><strong>Rides: </strong>Quickly and conveniently get where you need to go</span>
+        <span class="mark"><strong>Delivery: </strong>Fast, Secure, Affordable and Convenient way to send a package where it needs to go</span>
+        <span><strong>Towing: </strong>Easily get a towing assistance to get you back on the road quickly.</span>
         <!-- <span> Bet Investment</span> -->
       </div>
 
 
       <!-- <h1>We firmly believe that you can have a comfortable journey to your destination at any hour, whether it’s day or night.</h1> -->
-      <h1>We firmly believe that you can get a reliable and comfortable service at any hour, whether it’s day or night.</h1>
+      <h1>Bonnyride: Your Ride, Delivery, and Towing Partner on Bonny Island</h1>
 
       <!-- <small>Use our flexible learning path, adjust your learning to suit your time  — all in one place. Open a free account in minutes and learn any time.</small> -->
 
@@ -36,33 +37,52 @@ import { CommonModule } from '@angular/common';
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    //background-color: #eee;
     div {
-      margin: 0 1em 0 1em;
+      margin: 1em;
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      .mark {
+          border-right: 1px dotted #bbb;
+        }
       span {
-        margin-left: 1em;
+        margin: 0.4em;
         color: #AD1457;
         font-family: Verdana;
-        display: list-item;
-        list-style-type: disc;
-        list-style-position: inside;
+        
+        strong {
+          display: block;
+          margin-bottom: 0.5em;
+        }
       }
     }
     h1 {
       font-weight: bolder;
-      text-align: justify;
       margin: 1em;
     }
     small {
       text-align: justify;
       margin: 0 1em;
     }
-    /* a {
-      margin-top: 2em;
-    } */
   }
+
+
+  /* Media Query for Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+  aside {
+    div {
+      margin: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .mark {
+        border-bottom: 1px dotted #bbb;
+        border-right: 0px dotted #bbb;
+        padding-bottom: 1em;
+      }
+    }
+  }
+}
   `],
 })
 export class WhyWeExistComponent implements OnInit{
