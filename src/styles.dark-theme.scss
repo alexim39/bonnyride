@@ -1,11 +1,11 @@
 :root {
     --background-color-light: #ffffff;
-    --background-color-dark: #313131; 
+    --background-color-dark: #000000; 
     --text-color-light: #000000;
     --text-color-dark: #ffffff;
 
     /* light dark */
-    --background-color-light-dark: rgb(98, 98, 98);
+    --background-color-light-dark: rgba(0, 0, 0, 0.87);
     /* intro course backgroud */
     --intro-course-background-color: #eeeeee;
 }
@@ -108,14 +108,21 @@ body {
         border-top: 1px solid var(--intro-course-background);
     }
 
-    .head, .body, .accordion {
+    .head, .body {
         background-color: var(--intro-course-background);
         color: var(--text-color); 
     }
+    mat-accordion, .accordion, .mat-elevation-z8 {
+         mat-expansion-panel-header, table, th, td {
+            //mat-panel-title { 
+                background-color: var(--intro-course-background);
+               color: var(--text-color);
+            //}
+        }
+    }
 
 
-
-    .partner-container  {
+    .partner-container   {
         background-color: var(--background-color);
         color: var(--text-color);
          p{
@@ -136,7 +143,7 @@ body {
         color: var(--text-color);
     }
 
-    .about-async {
+    .about-async, .text-content {
         background-color: var(--intro-course-background);
         color: var(--text-color);
     }

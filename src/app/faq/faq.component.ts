@@ -55,7 +55,7 @@ import { MatSelectModule } from '@angular/material/select';
       width: 70%;
       padding: 2em 1em 2em 8em;
       h3 {
-        color: #ffab40;
+        //color: #ffab40;
       }
       p {
         text-align: justify;

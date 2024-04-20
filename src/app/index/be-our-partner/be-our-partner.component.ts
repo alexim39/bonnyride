@@ -36,7 +36,7 @@ import { Router, RouterModule } from '@angular/router';
         padding: 2em;
         h1 {
           text-align: right;
-          color: black;
+          //color: black;
           .title {
             font-size: 0.5em;
             text-align: left;
