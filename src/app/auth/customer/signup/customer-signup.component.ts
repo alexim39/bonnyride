@@ -188,7 +188,7 @@ import { RouterModule } from '@angular/router';
       </li>
     </ol>
 
-    <a mat-raised-button color="primary" (click)="scrollToTop()">Sign up now</a>
+    <a mat-raised-button color="accent" (click)="scrollToTop()">Sign up now</a>
   </div>
 </div>
   `,

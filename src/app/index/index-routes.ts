@@ -102,15 +102,15 @@ export const IndexRoutes: Routes = [
                 ]
             },
             { path: 'cab-services', 
-                loadComponent: () => import('../services/cab-services.component').then(c => c.CabServicesComponent),
+                loadComponent: () => import('../services/cab/cab-services.component').then(c => c.CabServicesComponent),
                 title: "Cab services - Book/Order a cab"
             },
             { path: 'tow-services', 
-                loadComponent: () => import('../services/cab-services.component').then(c => c.CabServicesComponent),
+                loadComponent: () => import('../services/tow/tow-services.component').then(c => c.TowServicesComponent),
                 title: "Tow truck services - Book/Order a cab"
             },
             { path: 'courier-services', 
-                loadComponent: () => import('../services/cab-services.component').then(c => c.CabServicesComponent),
+                loadComponent: () => import('../services/courier/courier-services.component').then(c => c.CourierServicesComponent),
                 title: "Courier services - Book/Order a cab"
             },
         ]

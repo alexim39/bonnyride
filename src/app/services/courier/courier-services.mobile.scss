@@ -1,0 +1,103 @@
+
+  
+/* Media Query for Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+  .main-container {
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .left-content {
+        .bold-text {
+          font-size: 2em;
+        }
+        .normal-text {
+          font-size: 1em;
+          width: 100%;
+        }
+      }
+      .right-panel {
+        
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }  
+
+  .step-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0;
+    .step-content {
+      width: 80%;
+      color: white;
+      background: rgb(56, 56, 56);
+      border-radius: 20px;
+      padding: 1em;
+      ol {
+        li {
+          text-align: left;
+          p, h2 {
+            font-family: cursive;
+          }
+        }
+      }
+      
+    }
+  }
+
+  aside {
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    div {
+      display: flex;
+      flex-direction: column;
+      span {
+        margin-bottom: 1em;
+        width: 100%;
+      }
+      
+    }
+    a {
+      span {
+        font-size: 1em;
+        font-weight: normal;
+      }
+    }
+  }
+
+}
+    
+    
+/* iPads/tablet (portrait and landscape) */
+@media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {
+     
+  .main-container {
+    .content {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .left-content {
+        .bold-text {
+          font-size: 2em;
+        }
+        .normal-text {
+          font-size: 1em;
+          width: 100%;
+        }
+      }
+      .right-panel {
+        .panel-content {
+          width: auto;
+        }
+      }
+    }
+  }   
+}
+  

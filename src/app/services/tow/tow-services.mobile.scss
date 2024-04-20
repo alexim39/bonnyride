@@ -1,0 +1,105 @@
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+
+    .main-container {
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .left-content {
+            .bold-text {
+            font-size: 2em;
+            }
+            .normal-text {
+            font-size: 1em;
+            width: 100%;
+            }
+        }
+        .right-panel {
+            
+            img {
+            width: 80%;
+            }
+        }
+        }
+    }
+    
+        
+    .head {
+        article {
+          width: 100%;
+          padding: 1em;
+          h2 {
+            font-size: 1.4em;
+          }
+          h3 {
+            font-size: 1em;
+          }
+          p {
+            width: 90%;
+          }
+        }
+    }
+    
+    .body {
+      
+      .writeup {
+        width: 100%;
+        padding: 1em;
+        h3 {
+          padding-left: 1em;
+        }
+        p {
+          width: 100%;
+        }
+    
+        .contact-wrapper {
+            flex-direction: column; /* Stack items vertically on smaller screens */
+          }
+    
+          .contact-details,
+          .contact-form {
+            flex: 100%; /* Take 100% width on smaller screens */
+          }
+        }
+       
+      }
+
+      .contact-form {
+    
+        flex: 1; /* Take 50% width initially */
+        padding: 10px;
+        .form-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            .wrapper-left {
+                flex: 1; /* Take 50% width initially */
+            }
+            .wrapper-right {
+                flex: 1; /* Take 50% width initially */
+            }
+        }
+        .form-btn {
+            margin-top: 1em;
+            a {
+                font-size: 0.8em;
+            }
+        }
+        
+      }
+
+    }
+    
+    
+    
+    /* iPads/tablet (portrait and landscape) */
+     @media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {
+      .body {
+        .writeup {
+          width: 100%;
+          padding: 1em 2em;
+        }
+      }
+    }

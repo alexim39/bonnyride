@@ -1,0 +1,135 @@
+
+  
+/* Media Query for Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+  .main-container {
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .left-content {
+          .bold-text {
+            font-size: 2em;
+          }
+          .normal-text {
+            font-size: 1em;
+            width: 100%;
+          }
+        }
+        .right-panel {
+          
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+    
+    .benefit {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 1em;
+      
+      div {
+        width: 100%;
+        margin-bottom: 2em;
+        flex: 1 1 auto;
+        h1, h2, h3 {
+          //font-family: cursive;
+        }
+        color: rgb(116, 116, 116);
+        text-align: center;
+        p {
+          padding: 0 1em;   
+          font-family: cursive;   
+         // width: 70%;  
+          text-align: justify;
+        }
+      }
+    }
+
+    .experience {
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2em;
+      p {
+        width: 100%;
+        text-align: justify;
+      }
+    }
+  
+  
+    .download-container {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      justify-content: space-around; /* Align items on opposite sides */
+      width: 100%; /* Take full width */
+      .download-img {
+        width: 100%; /* Ensure image fills the container */
+        height: auto;
+      }
+      
+      .download-text {
+        text-align: center; /* Center text content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+          width: 100%;
+          font-family: cursive;
+        }
+      }
+      .download-img,
+      .download-text {
+        flex: unset; /* Remove flex sizing for smaller screens */
+      }
+    }
+
+  }
+  
+  
+  /* iPads/tablet (portrait and landscape) */
+  @media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {
+   
+    .main-container {
+      .content {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          .left-content {
+            .bold-text {
+              font-size: 2em;
+            }
+            .normal-text {
+              font-size: 1em;
+              width: 100%;
+            }
+          }
+          .right-panel {
+            .panel-content {
+              width: auto;
+            }
+          }
+        }
+      }
+      
+      .benefit {
+        .sub-title {
+          font-size: 1em;
+        }
+       
+      }
+
+      .download-img,
+      .download-text {
+        flex: unset; /* Remove flex sizing for smaller screens */
+      }
+    
+  }
