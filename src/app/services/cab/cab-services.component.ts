@@ -88,7 +88,7 @@ import { RouterModule } from '@angular/router';
     
     <h2>Experience the Bonnyride Difference</h2>
     <p>
-    Book your ride with Bonny Cabs today and experience the difference for yourself.  We're committed to providing you with a stress-free and enjoyable transportation experience on Bonny Island.
+    Book your ride with Bonnyride today and experience the difference for yourself.  We're committed to providing you with a stress-free and enjoyable transportation experience on Bonny Island.
     </p>
 
 </section>

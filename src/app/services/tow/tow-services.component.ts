@@ -36,7 +36,7 @@ import { MatSelectModule } from '@angular/material/select';
     <article>
       <!-- <h2>Bonnyride Towing Service: We Support You Get Back on the Road Quickly on Bonny Island</h2> -->
       <h3>We'll Be There When You Need Us Most</h3>
-      <p>Don't let a car breakdown ruin your day! Bonny Cabs Towing Service is here to get you back on the road quickly and efficiently, 24/7.</p>
+      <p>Don't let a car breakdown ruin your day! Bonnyride Towing Service is here to get you back on the road quickly and efficiently, 24/7.</p>
 
       <p>We understand that car trouble can be stressful, especially on an island.  
         Our friendly and professional dispatchers are available around the clock to take your call and send help right away.  
@@ -58,7 +58,7 @@ import { MatSelectModule } from '@angular/material/select';
 
           <div class="address-wrapper">
             <div class="fa-icon">
-              <div class="fa fa-globe" aria-hidden="true"></div>
+              <div class="fa fa-clock-o" aria-hidden="true"></div>
             </div>
             <div class="address-text">
               <h6>24/7 Towing</h6>
@@ -68,7 +68,7 @@ import { MatSelectModule } from '@angular/material/select';
 
           <div class="address-wrapper">
             <div class="fa-icon">
-              <div class="fa fa-globe" aria-hidden="true"></div>
+              <div class="fa fa-car" aria-hidden="true"></div>
             </div>
             <div class="address-text">
               <h6>Flat Tire Assistance</h6>
@@ -78,7 +78,7 @@ import { MatSelectModule } from '@angular/material/select';
 
           <div class="address-wrapper">
             <div class="fa-icon">
-              <div class="fa fa-globe" aria-hidden="true"></div>
+              <div class="fa fa-ambulance" aria-hidden="true"></div>
             </div>
             <div class="address-text">
               <h6>Accident Towing</h6>
@@ -88,7 +88,7 @@ import { MatSelectModule } from '@angular/material/select';
 
           <div class="address-wrapper">
             <div class="fa-icon">
-              <div class="fa fa-globe" aria-hidden="true"></div>
+              <div class="fa fa-road" aria-hidden="true"></div>
             </div>
             <div class="address-text">
               <h6>Off-Road Recovery</h6>
@@ -98,7 +98,7 @@ import { MatSelectModule } from '@angular/material/select';
 
           <div class="address-wrapper">
             <div class="fa-icon">
-              <div class="fa fa-globe" aria-hidden="true"></div>
+              <div class="fa fa-taxi" aria-hidden="true"></div>
             </div>
             <div class="address-text">
               <h6>Winch-Out Services</h6>
@@ -153,7 +153,7 @@ import { MatSelectModule } from '@angular/material/select';
               <div class="wrapper-right">
                 <h4>Transparent Pricing</h4>
                 <p>We understand the importance of affordability during a stressful time. 
-                  That's why we offer upfront pricing before we dispatch a tow truck.  There are no hidden fees, so you know exactly what to expect.</p>
+                  <strong>That's why we offer upfront pricing before we dispatch a tow truck.</strong>  There are no hidden fees, so you know exactly what to expect.</p>
               </div>
 
           </div>
