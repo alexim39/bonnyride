@@ -16,6 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PaystackService } from '../_common/services/paystack.service';
 import { Subscription } from 'rxjs';
 import { CarDetails } from '../_common/car-details.interface';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 
 export interface BookForLaterFormData {
   names: string;
@@ -34,7 +35,7 @@ export interface BookForLaterFormData {
   selector: 'async-book-later',
   standalone: true,
   providers: [PaystackService],
-  imports: [MatButtonModule, MatProgressBarModule, ReactiveFormsModule, MatDividerModule, MatIconModule, CommonModule, MatExpansionModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, MatNativeDateModule, MatSelectModule],
+  imports: [MatButtonModule, MatProgressBarModule, RouterModule, ReactiveFormsModule, MatDividerModule, MatIconModule, CommonModule, MatExpansionModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, MatNativeDateModule, MatSelectModule],
   template: `
  
    <section class="head">
@@ -42,6 +43,14 @@ export interface BookForLaterFormData {
       <h2>Book A BonnyRide Cab for Later Use</h2>
       <p>Use below form to complete your ride booking for later</p>
     </article>
+  </section>
+
+  <section class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> &gt;
+        <!-- <a routerLink="/courses" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courses</a> &gt; -->
+        <span>Book for later</span>
+    </div>
   </section>
 
 

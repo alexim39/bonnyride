@@ -11,7 +11,7 @@
         .left-content {
         flex: 1;
         padding: 20px;
-        color: black;
+        //color: black;
         .bold-text {
             font-weight: bold;
             font-size: 3em;
@@ -42,7 +42,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2em 0;
+    padding: 2em 0;
     .step-content {
       width: 80%;
       color: white;

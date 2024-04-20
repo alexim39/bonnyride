@@ -16,6 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PaystackService } from '../_common/services/paystack.service';
 import { Subscription } from 'rxjs';
 import { CarDetails } from '../_common/car-details.interface';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 
 
 export interface OrderNowFormData {
@@ -36,7 +37,7 @@ export interface OrderNowFormData {
   selector: 'async-order-now',
   standalone: true,
   providers: [PaystackService],
-  imports: [MatButtonModule, MatProgressBarModule, ReactiveFormsModule, MatDividerModule, MatIconModule, CommonModule, MatExpansionModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, MatNativeDateModule, MatSelectModule],
+  imports: [MatButtonModule, MatProgressBarModule, RouterModule, ReactiveFormsModule, MatDividerModule, MatIconModule, CommonModule, MatExpansionModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, MatNativeDateModule, MatSelectModule],
   templateUrl: 'order-now.component.html',
   styleUrls: ['order-now.component.scss']
 })

@@ -152,6 +152,31 @@ body {
         }
     }
 
+    /* for Service page */
+    .main-container {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    .step-container {
+        background-color: var(--intro-course-background);
+        color: var(--text-color);
+    }
+
+    .benefit {
+        background-color: var(--background-color);
+        color: var(--text-color); 
+    }
+
+    .experience {
+        background-color: var(--intro-course-background);
+        color: var(--text-color);
+    }
+
+    .download-container {
+        background-color: var(--background-color);
+        color: var(--text-color); 
+    }
    
 }
 
