@@ -90,7 +90,7 @@ import { MatSelectModule } from '@angular/material/select';
     <h1>We can handle a variety of items both large and small</h1>
 
 
-    <a mat-flat-button color="accent" href="tel:09130311019">CALL US NOW ON <span>091 3031 1019</span></a>
+    <a mat-flat-button color="accent" href="tel:09130311019">CALL US NOW ON 091 3031 1019</a>
   </aside>
 
  
