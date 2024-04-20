@@ -192,7 +192,7 @@ import { RouterModule } from '@angular/router';
   </div>
 </div>
   `,
-  styleUrls: ['customer-signup.component.scss']
+  styleUrls: ['customer-signup.component.scss', 'customer-signup.mobile.scss']
 })
 export class CustomerSignupComponent {
   hide = true;

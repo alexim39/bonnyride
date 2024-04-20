@@ -41,7 +41,7 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
       <span class="spacer"></span>
       <!-- Desktop View Menu -->
-      <a class="view-on-desktop" color="primary" mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a class="view-on-desktop" color="primary" mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Home</a>
       <a class="view-on-desktop" color="primary" mat-button [matMenuTriggerFor]="services">Services <i class="fa fa-angle-down"></i></a>
       <a class="view-on-desktop" color="primary" mat-flat-button [matMenuTriggerFor]="cab_order">Order Cab <i class="fa fa-angle-down"></i></a>
       <a class="view-on-desktop" color="accent" mat-flat-button [matMenuTriggerFor]="sign_in">Sign in <i class="fa fa-angle-down"></i></a>
@@ -60,7 +60,7 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
     <mat-toolbar-row class="mobile-nav" id="mobile-nav" *ngIf="showMobileNav" style="margin-bottom: 1.5em !important;">
       <!-- Mobile View Menu -->
-      <a mat-button color="primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a mat-button color="primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Home</a>
       <a mat-button color="primary" [matMenuTriggerFor]="services">Services <i class="fa fa-angle-down"></i></a>
       <a mat-button color="primary" [matMenuTriggerFor]="cab_order">Order <i class="fa fa-angle-down"></i></a>
       <a mat-button color="accent" [matMenuTriggerFor]="sign_in">Sign in <i class="fa fa-angle-down"></i></a>
@@ -106,12 +106,12 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
 <!-- sub dropdown menu for sign in -->
 <mat-menu #customer="matMenu">
-  <button mat-menu-item routerLink="auth/customer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in as customer</button>
-  <button mat-menu-item routerLink="auth/customer/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up as partner</button>
+  <button mat-menu-item routerLink="auth/customer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Sign in as customer</button>
+  <button mat-menu-item routerLink="auth/customer/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Sign up as partner</button>
 </mat-menu>
 <mat-menu #partner="matMenu">
-  <button mat-menu-item routerLink="auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in as partner</button>
-  <button mat-menu-item routerLink="auth/partner/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up as partner</button>
+  <button mat-menu-item routerLink="auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Sign in as partner</button>
+  <button mat-menu-item routerLink="auth/partner/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Sign up as partner</button>
 </mat-menu>
 
   `,

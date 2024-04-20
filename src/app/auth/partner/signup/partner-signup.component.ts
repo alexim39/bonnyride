@@ -140,7 +140,7 @@ import { RouterModule } from '@angular/router';
   </div>
 </div>
 `,
-styleUrls: ["partner-signup.component.scss"]
+styleUrls: ["partner-signup.component.scss", "partner-signup.mobile.scss"]
 })
 export class PartnerSignupComponent {
   hide = true;
