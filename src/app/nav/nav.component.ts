@@ -73,24 +73,30 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
 <!-- dropdown menu for Order Cab -->
 <mat-menu #cab_order="matMenu">
-  <button mat-menu-item routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Order instant ride</button>
-  <button mat-menu-item routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Book cab for later</button>
+  <button mat-menu-item routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Order instant ride</button>
+  <button mat-menu-item routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book cab for later</button>
 </mat-menu>
 
 <!-- dropdown menu for services -->
 <mat-menu #services="matMenu">
-  <button mat-menu-item routerLink="cab-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Cab Services</button>
-  <button mat-menu-item routerLink="courier-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courier Services</button>
-  <button mat-menu-item routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tow Truck Services</button>
+  <button mat-menu-item routerLink="cab-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Cab Services</button>
+  <button mat-menu-item routerLink="courier-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Courier Services</button>
+  <button mat-menu-item routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Tow Truck Services</button>
 </mat-menu>
 
 <!-- dropdown menu for Help & Support -->
 <mat-menu #help_support="matMenu">
-  <button mat-menu-item routerLink="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contacts</button>
-  <button mat-menu-item routerLink="feedback" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Customer feedback</button>
-  <button mat-menu-item routerLink="price-list" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Price list</button>
-  <button mat-menu-item routerLink="faq" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">FAQs</button>
+  <button mat-menu-item routerLink="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Contacts</button>
+  <button mat-menu-item routerLink="feedback" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Customer feedback</button>
+  <button mat-menu-item routerLink="price-list" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Price list</button>
+  <button mat-menu-item routerLink="faq" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">FAQs</button>
 </mat-menu>
+
+
+
+
+
+<!-- App Dropdowns -->
 
 <!-- dropdown menu for sign in -->
 <mat-menu #sign_in="matMenu">
@@ -126,6 +132,11 @@ export class NavComponent implements OnInit, OnDestroy {
     private themeTogglerService: ThemeTogglerService,
     public loadingSpinnerService: LoadingSpinnerService
   ) { }
+
+  // scroll to top when clicked
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   ngOnInit() {
     // listern to auth event emitter to check if user is signed in or not
