@@ -15,17 +15,18 @@ import { CommonModule } from '@angular/common';
   template: `
     <aside class="why-we-exist">
       <div>
-        <span>Order a cab any time, as we are available 247</span>
-        <span>Book a cab ahead and secure a convenient ride to your destination</span>
+        <span>Call for our services any time, as we are available 247</span>
+        <span>Book a cab and secure a convenient ride to your destination</span>
         <!-- <span> Bet Investment</span> -->
       </div>
 
 
-      <h1>We firmly believe that you can have a comfortable journey to your destination at any hour, whether it’s day or night.</h1>
+      <!-- <h1>We firmly believe that you can have a comfortable journey to your destination at any hour, whether it’s day or night.</h1> -->
+      <h1>We firmly believe that you can get a reliable and comfortable service at any hour, whether it’s day or night.</h1>
 
       <!-- <small>Use our flexible learning path, adjust your learning to suit your time  — all in one place. Open a free account in minutes and learn any time.</small> -->
 
-      <a mat-flat-button color="accent" href="tel:09130311019">CALL NOW</a>
+      <a mat-flat-button color="primary" href="tel:09130311019">CALL NOW</a>
     </aside>
   `,
   styles: [`

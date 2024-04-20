@@ -38,7 +38,10 @@
             .names-field {
                 display: flex;
                 justify-content: space-between;
-            }
+                mat-form-field {
+                  width: 49%;
+                }
+              }
             }
             p {
             font-family: cursive;

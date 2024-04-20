@@ -16,9 +16,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         <article>
           <strong>Async Edge Limited</strong>
           <p>
-            <a routerLink="cab-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> <strong>Cab Services</strong></a><br><br>
-            <a routerLink="courier-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><strong>Courier Services</strong></a><br><br>
-            <a routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><strong>Tow Truck Services</strong></a>
+            <a routerLink="cab-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()"> <strong>Cab Services</strong></a><br><br>
+            <a routerLink="courier-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()"><strong>Courier Services</strong></a><br><br>
+            <a routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()"><strong>Tow Truck Services</strong></a>
           </p>
         </article>
 
@@ -49,4 +49,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     }
   `]
 })
-export class FooterServiceComponent {}
+export class FooterServiceComponent {
+   // scroll to top when clicked
+   scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}

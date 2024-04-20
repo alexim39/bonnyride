@@ -30,10 +30,10 @@ section {
           justify-content: center;
           h1 {
             color: white;
-            font-size: 2.5em;
+            
             font-family: Vadana;
             em {
-              font-size: 0.5em;
+              font-size: 2.5em;
             }
             span {
               font-size: 2em;
@@ -42,9 +42,10 @@ section {
           h3 {
             margin-bottom: 2em;
           }
-          div {
+          .btn {
             a {
-              margin-left: 1em;
+             margin-left: 1em;
+              font-family: cursive;
             }
           }
         }
@@ -61,20 +62,40 @@ section {
       aside {
         article {
           h1 {
-            font-size: 1.5em;
-            padding: 0 0.4em;
+            
+            display: flex;
+            flex-direction: column;
+            em {
+              font-size:1.8em;
+            }
+          }
+          
+          .btn{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            a {
+              margin-bottom: 1em;
+              margin-left: 0em;
+            }
           }
         }
       }
      
       }
-      .btn{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        #get-account {
-          margin-bottom: 1em;
-        }
-      }
+      
     }
+}
+
+/* iPads/tablet (portrait and landscape) */
+@media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {
+  .btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    a {
+      margin-bottom: 1em;
+      margin-left: 0em;
+    }
+  }
 }

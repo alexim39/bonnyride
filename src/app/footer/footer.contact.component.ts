@@ -16,8 +16,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         <article>
           <strong>Async Groups</strong>
           <p>
-            <a routerLink="about-async" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><strong>About Us</strong></a><br><br>
-            <a routerLink="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><strong>Contact Us</strong></a>
+            <a routerLink="about-async" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()"><strong>About Us</strong></a><br><br>
+            <a routerLink="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()"><strong>Contact Us</strong></a>
           </p>
           <p> <strong>Head Office:</strong> <br>  54 Nkpor, Rumuolumeni. Port Harcourt, Rivers State.</p>
           <p> <strong>Bonny Island: </strong><br>  87 MG Hart Lane, Wilbros road. Bonny Island, Rivers State.</p>
@@ -64,6 +64,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   `]
 })
 export class FooterContactComponent {
+
+  // scroll to top when clicked
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   lunchWhatsAppGroup() {
     window.open('https://wa.me/message/BQ4PN6TYXNE5D1', '_blank');
   }

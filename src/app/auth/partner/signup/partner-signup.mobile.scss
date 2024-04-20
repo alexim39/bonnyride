@@ -18,6 +18,18 @@
           .right-panel {
             .panel-content {
               width: auto;
+              form {
+                display: flex;
+                flex-direction: column;
+                .names-field {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    mat-form-field {
+                      width: 100%;
+                    }
+                  }
+                }
             }
           }
         }

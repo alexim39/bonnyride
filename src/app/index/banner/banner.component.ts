@@ -26,7 +26,10 @@ import { CommonModule } from '@angular/common';
           <article>
             <h1>
             <!-- Order a cab service that's available in Bonny 247, day or night <br> <em></em> <br> <span>091 3130 1019</span> -->
-            Order a cab service that's available in Bonny 24/7, day or night
+              <!-- Order a cab service that's available in Bonny 24/7, day or night -->
+              <em>Order a cab. </em>
+              <em style="color: #ffab40;">Call a delivery service.</em> 
+              <em>Call a towing vehicle.</em>
             </h1>
 
             <h3>
@@ -34,10 +37,14 @@ import { CommonModule } from '@angular/common';
             </h3>
 
             <div class="btn">
-              <a id="get-account" mat-raised-button routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ORDER INSTANT RIDE</a>
-              <!-- <a id="get-account" mat-raised-button href="tel:09131301019">CALL US NOW: 09131301019</a> -->
-              <a id="book-now" mat-raised-button color="accent" routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">BOOK FOR LATER</a>
-              <!-- <a id="book-now" mat-raised-button color="accent" (click)="lunchWhatsAppGroup()">BOOK US NOW</a> -->
+              <!-- <a id="get-account" mat-raised-button routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ORDER INSTANT RIDE</a> -->
+              <!-- <a mat-flat-button routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Order Ride</a> -->
+              <!-- <a mat-flat-button href="tel:09131301019" color="accent">CALL Towing Vehicle: 09131301019</a> -->
+              <!-- <a mat-flat-button href="tel:09131301019" color="primary">CALL Delivery Service: 09131301019</a> -->
+
+              <a mat-flat-button href="tel:09131301019" color="accent">CALL for our service: 091 3130 1019</a>
+              
+              <!-- <a id="book-now" mat-raised-button color="accent" routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">BOOK FOR LATER</a> -->
             </div>
           </article>
 

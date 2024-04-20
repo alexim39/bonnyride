@@ -51,8 +51,10 @@ export class TypingComponent implements AfterViewInit {
   @ViewChild("blinkElement") blinkElement!: ElementRef;
   @Input() wordArray: string[] = [
     " We assist you get to your destination fast.    ",
-    " Your comfort is our utmost goal.     ",
-    " Your convienience is our utmost target.     ",
+    //" Your comfort is our utmost goal.     ",
+    " Experience fast, reliable delivery across Bonny Island    ",
+    //" Your convienience is our utmost target.     ",
+    " Bonnyride Towing Service support you get back on the road quickly    ",
     " BonnyRide, the no. 1 cab service in Bonny Island.     ",
     //" Get links to helpful  academic resources.     ",
     //" Get links to income generating resources.     ",
