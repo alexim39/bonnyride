@@ -1,0 +1,252 @@
+
+ 
+<section class="head">
+    <article>
+       <h2>Book A Bonnyride Delivery Service</h2>
+       <p>Use below form to complete your booking for our courier service</p>
+     </article>
+   </section>
+ 
+   <section class="breadcrumb-wrapper">
+     <div class="breadcrumb">
+         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> &gt;
+         <a routerLink="/courier-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courier Service</a> &gt;
+         <span>Courier booking</span>
+     </div>
+</section>
+ 
+ 
+<section class="body">
+     <article class="writeup">
+
+     <mat-progress-bar color="accent" mode="indeterminate" *ngIf="isSpinning"></mat-progress-bar>
+
+
+
+
+     <mat-stepper #stepper [orientation]="orientation" [linear]="isLinear" >
+
+        <mat-step [stepControl]="senderFormGroup" label="Sender Information">
+          <form [formGroup]="senderFormGroup">
+
+            <div class="form-field-container">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name (Surname, First name)</mat-label>
+                    <input matInput formControlName="senderNameCtrl" required>
+                    <mat-error *ngIf="senderFormGroup.get('senderNameCtrl')?.invalid">
+                      <span *ngIf="senderFormGroup.get('senderNameCtrl')?.errors?.['required']">
+                        Name is required.
+                      </span>
+                      <span *ngIf="senderFormGroup.get('senderNameCtrl')?.errors?.['minlength']">
+                        Name must be at least 3 characters long.
+                      </span>
+                    </mat-error>
+                </mat-form-field>
+      
+                  <mat-form-field appearance="outline">
+                    <mat-label>Phone number</mat-label>
+                    <input matInput formControlName="senderPhoneCtrl" required>
+                    <mat-error *ngIf="senderFormGroup.get('senderPhoneCtrl')?.invalid">
+                      <span *ngIf="senderFormGroup.get('senderPhoneCtrl')?.errors?.['required']">
+                        Phone number is required.
+                      </span>
+                      <span *ngIf="senderFormGroup.get('senderPhoneCtrl')?.errors?.['pattern']">
+                        Please enter a valid Nigerian phone number.
+                      </span>
+                    </mat-error>
+                  </mat-form-field>
+      
+                  <mat-form-field appearance="outline">
+                    <mat-label>Emaill address (Optional)</mat-label>
+                    <input matInput formControlName="senderEmailCtrl">
+                    <mat-error *ngIf="senderFormGroup.get('senderEmailCtrl')?.invalid && senderFormGroup.get('senderEmailCtrl')?.errors?.['email']">
+                      Please enter a valid email address
+                    </mat-error>
+                  </mat-form-field>
+      
+                  <mat-form-field appearance="outline">
+                    <mat-label>Pick-up address</mat-label>
+                    <textarea formControlName="pickUpAddressCtrl"  matInput required></textarea>
+                    <mat-error *ngIf="senderFormGroup.get('pickUpAddressCtrl')?.hasError('required')">
+                      Your pick-up address is required
+                    </mat-error> 
+                  </mat-form-field>
+            </div>
+
+            <div class="stepper-btn">
+              <button mat-stroked-button color="primary" matStepperNext [disabled]="senderFormGroup.invalid" (click)="getSenderDetails(senderFormGroup.value)">Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="recipientFormGroup" label="Recipient Information">
+          <form [formGroup]="recipientFormGroup">
+            
+            
+            <div class="form-field-container">
+              <mat-form-field appearance="outline">
+                  <mat-label>Name (Surname, First name)</mat-label>
+                  <input matInput formControlName="recipientNameCtrl" required>
+                  <mat-error *ngIf="recipientFormGroup.get('recipientNameCtrl')?.invalid">
+                    <span *ngIf="recipientFormGroup.get('recipientNameCtrl')?.errors?.['required']">
+                      Name is required.
+                    </span>
+                    <span *ngIf="recipientFormGroup.get('recipientNameCtrl')?.errors?.['minlength']">
+                      Name must be at least 3 characters long.
+                    </span>
+                  </mat-error>
+              </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                  <mat-label>Phone number</mat-label>
+                  <input matInput formControlName="recipientPhoneCtrl" required>
+                  <mat-error *ngIf="recipientFormGroup.get('recipientPhoneCtrl')?.invalid">
+                    <span *ngIf="recipientFormGroup.get('recipientPhoneCtrl')?.errors?.['required']">
+                      Phone number is required.
+                    </span>
+                    <span *ngIf="recipientFormGroup.get('recipientPhoneCtrl')?.errors?.['pattern']">
+                      Please enter a valid Nigerian phone number.
+                    </span>
+                  </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                  <mat-label>Pick-up address</mat-label>
+                  <textarea formControlName="deliveryAddressCtrl"  matInput required></textarea>
+                  <mat-error *ngIf="recipientFormGroup.get('deliveryAddressCtrl')?.hasError('required')">
+                    Your delivery address is required
+                  </mat-error> 
+                </mat-form-field>
+          </div>
+
+          <div class="stepper-btn">
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button color="primary" matStepperNext [disabled]="recipientFormGroup.invalid" (click)="getRecipientDetails(recipientFormGroup.value)">Next</button>
+          </div>
+
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="packageFormGroup" label="Package Information">
+          <form [formGroup]="packageFormGroup">
+            
+            <div class="form-field-container">
+              <mat-form-field appearance="outline">
+                  <mat-label>Number of package</mat-label>
+                  <input matInput type="number" formControlName="noOfPackageCtrl" required>
+                  <mat-error *ngIf="packageFormGroup.get('noOfPackageCtrl')?.invalid">
+                    <span *ngIf="packageFormGroup.get('noOfPackageCtrl')?.errors?.['required']">
+                      A number is required.
+                    </span>
+                    <span *ngIf="packageFormGroup.get('noOfPackageCtrl')?.errors?.['pattern']">
+                      Package must be at least 1 number.
+                    </span>
+                  </mat-error>
+              </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                  <mat-label>Estimated weight (kg)</mat-label>
+                  <input matInput type="number" formControlName="estimatedWeightCtrl" required>
+                  <mat-error *ngIf="packageFormGroup.get('estimatedWeightCtrl')?.invalid">
+                    <span *ngIf="packageFormGroup.get('estimatedWeightCtrl')?.errors?.['required']">
+                      Weight is required.
+                    </span>
+                    <span *ngIf="packageFormGroup.get('estimatedWeightCtrl')?.errors?.['pattern']">
+                      Please enter estimated weight of package.
+                    </span>
+                  </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                  <mat-label>Content description</mat-label>
+                  <textarea formControlName="descriptionCtrl" matInput required></textarea>
+                  <mat-error *ngIf="packageFormGroup.get('descriptionCtrl')?.hasError('required')">
+                    Give a little description about the package
+                  </mat-error> 
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Special instruction (Optional)</mat-label>
+                  <textarea formControlName="instructionCtrl" matInput></textarea>
+                </mat-form-field>
+          </div>
+
+          <div class="stepper-btn">
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button color="primary" matStepperNext [disabled]="packageFormGroup.invalid" (click)="getPackageDetails(packageFormGroup.value)">Next</button>
+          </div>
+
+          </form>
+        </mat-step>
+
+        <mat-step label="Summary & Payment Information">
+          <p>You are almost done. View summary of your booking information.</p>
+
+          <div class="summary-payment">
+
+            <div class="booking-summary">
+
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Delivery Booking Summary</mat-card-title>
+                </mat-card-header>
+              
+                <mat-card-content>
+
+                  <div class="sender-summary" *ngIf="senderDetails">
+                    <h6>Sender Summary</h6>
+                    <p><b>Name:</b> {{senderDetails.senderNameCtrl}}</p>
+                    <p><b>Phone number:</b> {{senderDetails.senderPhoneCtrl}}</p>
+                    <p><b>Email address:</b> {{senderDetails.senderEmailCtrl}}</p>
+                    <p><b>Pick-up address:</b> {{senderDetails.pickUpAddressCtrl}}</p> 
+                  </div>
+
+                  <div class="recipient-summary" *ngIf="recipientDetails">
+                    <h6>Recipient Summary</h6>
+                    <p><b>Name:</b> {{recipientDetails.recipientNameCtrl}}</p>
+                    <p><b>Phone number:</b> {{recipientDetails.recipientPhoneCtrl}}</p>
+                    <p><b>Delivery address:</b> {{recipientDetails.deliveryAddressCtrl}}</p>
+                  </div>
+
+                  <div class="package-summary" *ngIf="packageDetails">
+                    <h6>Package Summary</h6>
+                    <p><b>Number of package:</b> {{packageDetails.noOfPackageCtrl}}</p>
+                    <p><b>Estimated weight (kg):</b> {{packageDetails.estimatedWeightCtrl}}</p>
+                    <p><b>Package description:</b> {{packageDetails.descriptionCtrl}}</p>
+                    <p><b>Special instruction:</b> {{packageDetails.instructionCtrl}}</p> 
+                  </div>
+
+                </mat-card-content>
+              
+              </mat-card>
+
+
+            </div>
+
+            <div class="booking-payment">
+              <form [formGroup]="paymentFormGroup" class="payment-form">
+
+                <div class="toggle"><mat-slide-toggle (change)="onToggleChange($event)">Do you wish to make delivery payment now?</mat-slide-toggle></div>
+
+                <div class="make-payment" *ngIf="isToggled">
+                  <h4>Delivery Cost</h4>
+                  <p><b>Number of package:</b> 5565656</p>
+                </div>
+
+                <div class="payment-btn">
+                  <button mat-stroked-button matStepperPrevious>Back</button>
+                  <button mat-stroked-button color="primary" *ngIf="isToggled">Book With Payment</button>
+                  <button mat-stroked-button color="accent" *ngIf="!isToggled">Book Without Payment</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </mat-step>
+
+      </mat-stepper>
+
+       
+     </article>
+     
+</section>

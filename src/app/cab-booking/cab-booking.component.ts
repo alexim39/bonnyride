@@ -32,7 +32,7 @@ export interface BookForLaterFormData {
  * @title Cap booking component
  */
 @Component({
-  selector: 'async-book-later',
+  selector: 'async-cab-booking',
   standalone: true,
   providers: [PaystackService],
   imports: [MatButtonModule, MatProgressBarModule, RouterModule, ReactiveFormsModule, MatDividerModule, MatIconModule, CommonModule, MatExpansionModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, MatNativeDateModule, MatSelectModule],
@@ -296,7 +296,7 @@ styles: [`
 }
 `]
 })
-export class BookLaterComponent implements OnInit, OnDestroy, AfterViewInit  {
+export class CabBookingComponent implements OnInit, OnDestroy, AfterViewInit  {
   pricingData: { [key: string]: number } = distancePriceData;
 
   pickupPoints: string[] = [];

@@ -33,7 +33,7 @@ import { RouterModule } from '@angular/router';
         </div>
 
         <div class="more-btn">
-            <a mat-raised-button color="accent" routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book Courier Now <i class="fa fa-angle-double-right"></i></a>
+            <a mat-raised-button color="accent" routerLink="../courier-booking" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book Courier Now <i class="fa fa-angle-double-right"></i></a>
         </div>
 
       </div>

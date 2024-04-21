@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { OrderNowFormData  } from 'src/app/order-now/order-now.component';
+import { OrderNowFormData  } from 'src/app/cab-order/cab-order.component';
 
 const headers = new HttpHeaders({
   Authorization: `Bearer sk_live_2288514c9d501669926c10dc09cff03b11b3bafa`

@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
         <div class="bold-text">Bonnyride Towing Service: We Support You Get Back on the Road Quickly on Bonny Island</div>
 
         <div class="more-btn">
-            <a mat-raised-button color="accent" routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book Towing Vehicle Now <i class="fa fa-angle-double-right"></i></a>
+            <a mat-raised-button color="accent" routerLink="../tow-booking" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book Towing Vehicle Now <i class="fa fa-angle-double-right"></i></a>
         </div>
 
       </div>

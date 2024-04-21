@@ -34,14 +34,14 @@ export interface OrderNowFormData {
  * @title Cap Order component
  */
 @Component({
-  selector: 'async-order-now',
+  selector: 'async-cab-order',
   standalone: true,
   providers: [PaystackService],
   imports: [MatButtonModule, MatProgressBarModule, RouterModule, ReactiveFormsModule, MatDividerModule, MatIconModule, CommonModule, MatExpansionModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, MatNativeDateModule, MatSelectModule],
-  templateUrl: 'order-now.component.html',
-  styleUrls: ['order-now.component.scss']
+  templateUrl: 'cab-order.component.html',
+  styleUrls: ['cab-order.component.scss']
 })
-export class OrderNowComponent implements OnInit, OnDestroy {
+export class CabOrderComponent implements OnInit, OnDestroy {
 
   pricingData: { [key: string]: number } = distancePriceData;
 

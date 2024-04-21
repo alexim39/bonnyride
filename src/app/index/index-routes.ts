@@ -32,12 +32,12 @@ export const IndexRoutes: Routes = [
                 loadComponent: () => import('../contact/contact.component').then(c => c.ContactComponent),
                 title: "Contact Us - Easy means of reaching us"
             },
-            { path: 'book-later', 
-                loadComponent: () => import('../book-later/book-later.component').then(c => c.BookLaterComponent),
+            { path: 'cab-booking', 
+                loadComponent: () => import('../cab-booking/cab-booking.component').then(c => c.CabBookingComponent),
                 title: "Book for Later - Book a cab for later use"
             },
-            { path: 'order-now', 
-                loadComponent: () => import('../order-now/order-now.component').then(c => c.OrderNowComponent),
+            { path: 'cab-order', 
+                loadComponent: () => import('../cab-order/cab-order.component').then(c => c.CabOrderComponent),
                 title: "Order Instant Ride - Order a cab for instant use"
             },
             { path: 'price-list', 
@@ -112,6 +112,10 @@ export const IndexRoutes: Routes = [
             { path: 'courier-services', 
                 loadComponent: () => import('../services/courier/courier-services.component').then(c => c.CourierServicesComponent),
                 title: "Courier services - Book/Order a cab"
+            },
+            { path: 'courier-booking', 
+                loadComponent: () => import('../courier-booking/courier-booking.component').then(c => c.CourierBookingComponent),
+                title: "Courier booking - Book a delivery service"
             },
         ]
     },

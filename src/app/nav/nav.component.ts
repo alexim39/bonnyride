@@ -73,8 +73,8 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
 
 <!-- dropdown menu for Order Cab -->
 <mat-menu #cab_order="matMenu">
-  <button mat-menu-item routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Order instant ride</button>
-  <button mat-menu-item routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book cab for later</button>
+  <button mat-menu-item routerLink="cab-order" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Order instant ride</button>
+  <button mat-menu-item routerLink="cab-booking" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book cab for later</button>
 </mat-menu>
 
 <!-- dropdown menu for services -->
