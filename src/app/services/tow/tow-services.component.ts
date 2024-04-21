@@ -8,6 +8,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { RouterModule } from '@angular/router';
 
 /**
  * @title contact page
@@ -15,7 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 @Component({
   selector: 'async-tow-services',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule],
+  imports: [MatButtonModule, MatDividerModule, MatIconModule, RouterModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule],
   template: `
 
 <div class="main-container">
@@ -23,6 +24,11 @@ import { MatSelectModule } from '@angular/material/select';
 
       <div class="left-content">
         <div class="bold-text">Bonnyride Towing Service: We Support You Get Back on the Road Quickly on Bonny Island</div>
+
+        <div class="more-btn">
+            <a mat-raised-button color="accent" routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book Towing Vehicle Now <i class="fa fa-angle-double-right"></i></a>
+        </div>
+
       </div>
 
       <div class="right-panel">
@@ -176,4 +182,10 @@ export class TowServicesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {}
+
+   // scroll to top when clicked
+   scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 }

@@ -115,10 +115,6 @@ import { Router, RouterModule } from '@angular/router';
           <a mat-button color="accent" routerLink="auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Sign up Now <i class="fa fa-angle-double-right"></i></a>
         </div>
 
-        <!-- <p>
-        At Async Groups, we’re not just providing services; we’re building relationships based on trust and mutual growth. We’re proud of the work we’ve done, and we’re excited about what the future holds. 
-        Because at Async Groups, we believe that our success is tied to the success of our customers.            
-        </p> -->
     </div>
 
 </div>

@@ -8,6 +8,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { RouterModule } from '@angular/router';
 
 /**
  * @title contact page
@@ -15,7 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 @Component({
   selector: 'async-courier-services',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule],
+  imports: [MatButtonModule, MatDividerModule, RouterModule, MatIconModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule],
   template: `
  
  <div class="main-container">
@@ -30,6 +31,11 @@ import { MatSelectModule } from '@angular/material/select';
         <div class="normal-text">
           We offer a convenient and reliable courier service to get your important packages and documents delivered securely across Bonny Island.
         </div>
+
+        <div class="more-btn">
+            <a mat-raised-button color="accent" routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Book Courier Now <i class="fa fa-angle-double-right"></i></a>
+        </div>
+
       </div>
 
       
@@ -101,4 +107,10 @@ export class CourierServicesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {}
+
+   // scroll to top when clicked
+   scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 }

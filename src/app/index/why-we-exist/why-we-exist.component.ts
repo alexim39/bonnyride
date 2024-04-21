@@ -15,10 +15,27 @@ import { CommonModule } from '@angular/common';
   template: `
     <aside class="why-we-exist">
       <div>
-        <span class="mark"><strong>Rides: </strong>Quickly and conveniently get where you need to go</span>
-        <span class="mark"><strong>Delivery: </strong>Fast, Secure, Affordable and Convenient way to send a package where it needs to go</span>
-        <span><strong>Towing: </strong>Easily get a towing assistance to get you back on the road quickly.</span>
-        <!-- <span> Bet Investment</span> -->
+
+        <span class="mark">
+          <strong>Rides: </strong>Quickly and conveniently get where you need to go
+          <div class="more">
+            <a routerLink="cab-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Know more <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </span>
+
+        <span class="mark">
+          <strong>Delivery: </strong>Fast, Secure, Affordable and Convenient way to send a package where it needs to go
+          <div class="more">
+            <a routerLink="courier-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Know more <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </span>
+
+        <span>
+          <strong>Towing: </strong>Easily get a towing assistance to get you back on the road quickly
+          <div class="more">
+            <a routerLink="tow-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">Know more <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </span>
       </div>
 
 
@@ -44,15 +61,26 @@ import { CommonModule } from '@angular/common';
       justify-content: space-between;
       .mark {
           border-right: 1px dotted #bbb;
+          padding-right: 1em;
         }
       span {
         margin: 0.4em;
         color: #AD1457;
         font-family: Verdana;
-        
         strong {
           display: block;
           margin-bottom: 0.5em;
+        }
+        .more {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          a {
+            font-size: 0.8em;
+            color: #00838f;
+            font-weight: bolder;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -94,6 +122,11 @@ export class WhyWeExistComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {  }
+
+   // scroll to top when clicked
+   scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
 
 

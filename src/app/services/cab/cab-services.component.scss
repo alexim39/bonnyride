@@ -9,19 +9,24 @@
         display: flex;
         width: 80%;
         .left-content {
-        flex: 1;
-        padding: 20px;
-        color: white;
-        .bold-text {
+          flex: 1;
+          padding: 20px;
+          color: white;
+          .bold-text {
             font-weight: bold;
             font-size: 3em;
             margin: 1em 0;
-        }
-        .normal-text {
+          }
+          .normal-text {
             font-size: 1.1em;
             width: 70%;
             font-family: cursive;
-        }
+          }
+          .more-btn {
+            margin-top: 2em;
+            //display: flex;
+            //justify-content: center;
+          }
         }
         .right-panel {
         flex: 1;
