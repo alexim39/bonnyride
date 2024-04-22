@@ -49,16 +49,18 @@ export interface PackageDetailsInterfacer {
  * @title Courier booking component
  */
 @Component({
-  selector: 'async-courier-booking',
+  selector: 'async-tow-booking',
   standalone: true,
   providers: [PaystackService],
   imports: [MatButtonModule, MatProgressBarModule, MatTableModule, MatSlideToggleModule, MatCardModule, RouterModule, MatStepperModule, ReactiveFormsModule, MatDividerModule, MatIconModule, CommonModule, MatExpansionModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, MatNativeDateModule, MatSelectModule],
-  templateUrl: 'courier-booking.component.html',
-styleUrls: ['courier-booking.component.scss', 'courier-booking.mobile.scss']
+  templateUrl: 'tow-booking.component.html',
+styleUrls: ['tow-booking.component.scss', 'tow-booking.mobile.scss']
 })
-export class CourierBookingComponent implements OnInit, OnDestroy  {
+export class TowBookingComponent implements OnInit, OnDestroy  {
   isMobile: boolean = false;
+
   subscriptions: Subscription[] = [];
+
   isSpinning: boolean = false;
 
   orientation: StepperOrientation = 'horizontal'; // Set initial orientation

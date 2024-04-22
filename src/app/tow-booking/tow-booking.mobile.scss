@@ -1,0 +1,88 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .head {
+        article {
+          width: 100%;
+          padding: 1em;
+          h2 {
+            font-size: 1.4em;
+          }
+          h3 {
+            font-size: 1em;
+          }
+          p {
+            width: 90%;
+          }
+        }
+    }
+    
+    .body {
+      .writeup {
+        mat-stepper {
+            form {
+                .form-field-container {
+                    display: flex;
+                    flex-direction: column;
+                    mat-form-field {
+                        margin-top: 0.3em;
+                    }
+                }
+                
+            } 
+            .summary-payment {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around; /* Align items on opposite sides */
+              width: 100%; /* Take full width */
+              .booking-summary {
+                mat-card {
+                  mat-card-content {
+                    display: flex;
+                    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+                    justify-content: space-around; /* Align items on opposite sides */
+                    width: 100%; /* Take full width */
+                  }
+                }
+              }
+              .booking-payment {
+                .payment-form {
+                  display: flex;
+                  flex-direction: column;
+                  .toggle {
+                    text-align: center;
+                    font-weight: bold;
+                  }
+                  .make-payment {
+                    text-align: center;
+                  }
+                  .payment-btn {
+                    text-align: center;
+                    margin-top: 2em;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    button {
+                      margin-top: 1em;
+                    }
+                  }
+                }
+              }
+  
+              .booking-payment, .booking-summary  {
+                flex: 1; /* Make each child item take up equal space */
+                padding: 10px; /* Optional padding for styling */
+              }
+  
+            }      
+        }
+      }
+    }
+}
+    
+/* iPads/tablet (portrait and landscape) */
+ @media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {
+    .head {
+        article {
+            width: 100%;
+        }
+    }
+}

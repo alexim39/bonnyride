@@ -107,7 +107,7 @@ export const IndexRoutes: Routes = [
             },
             { path: 'tow-services', 
                 loadComponent: () => import('../services/tow/tow-services.component').then(c => c.TowServicesComponent),
-                title: "Tow truck services - Book/Order a cab"
+                title: "Tow services - Book/Order a cab"
             },
             { path: 'courier-services', 
                 loadComponent: () => import('../services/courier/courier-services.component').then(c => c.CourierServicesComponent),
@@ -115,7 +115,11 @@ export const IndexRoutes: Routes = [
             },
             { path: 'courier-booking', 
                 loadComponent: () => import('../courier-booking/courier-booking.component').then(c => c.CourierBookingComponent),
-                title: "Courier booking - Book a delivery service"
+                title: "Courier service booking - Book a delivery service"
+            },
+            { path: 'tow-booking', 
+                loadComponent: () => import('../tow-booking/tow-booking.component').then(c => c.TowBookingComponent),
+                title: "Tow service booking - Book a delivery service"
             },
         ]
     },
