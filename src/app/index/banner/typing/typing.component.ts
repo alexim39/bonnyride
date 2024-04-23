@@ -55,7 +55,7 @@ export class TypingComponent implements AfterViewInit {
     " Experience fast, reliable delivery across Bonny Island    ",
     //" Your convienience is our utmost target.     ",
     " Bonnyride Towing Service support you get back on the road quickly    ",
-    " BonnyRide, the no. 1 cab service in Bonny Island.     ",
+    " Bonnyride, the no. 1 cab service in Bonny Island.     ",
     //" Get links to helpful  academic resources.     ",
     //" Get links to income generating resources.     ",
     //" Give help with accademic work to fellow students.     ",

@@ -24,9 +24,9 @@
 
 
 
-     <mat-stepper #stepper [orientation]="orientation" [linear]="isLinear" >
+     <mat-stepper #stepper [orientation]="orientation" > <!--  [linear]="isLinear" -->
 
-        <mat-step [stepControl]="senderFormGroup" label="Sender Information">
+        <mat-step [stepControl]="senderFormGroup" label="Customer Information">
           <form [formGroup]="senderFormGroup">
 
             <div class="form-field-container">
@@ -64,13 +64,13 @@
                     </mat-error>
                   </mat-form-field>
       
-                  <mat-form-field appearance="outline">
+                  <!-- <mat-form-field appearance="outline">
                     <mat-label>Pick-up address</mat-label>
                     <textarea formControlName="pickUpAddressCtrl"  matInput required></textarea>
                     <mat-error *ngIf="senderFormGroup.get('pickUpAddressCtrl')?.hasError('required')">
                       Your pick-up address is required
                     </mat-error> 
-                  </mat-form-field>
+                  </mat-form-field> -->
             </div>
 
             <div class="stepper-btn">
@@ -79,13 +79,13 @@
           </form>
         </mat-step>
 
-        <mat-step [stepControl]="recipientFormGroup" label="Recipient Information">
+        <mat-step [stepControl]="recipientFormGroup" label="Vehicle Information">
           <form [formGroup]="recipientFormGroup">
             
             
             <div class="form-field-container">
               <mat-form-field appearance="outline">
-                  <mat-label>Name (Surname, First name)</mat-label>
+                  <mat-label>Car make & model</mat-label>
                   <input matInput formControlName="recipientNameCtrl" required>
                   <mat-error *ngIf="recipientFormGroup.get('recipientNameCtrl')?.invalid">
                     <span *ngIf="recipientFormGroup.get('recipientNameCtrl')?.errors?.['required']">
@@ -98,7 +98,7 @@
               </mat-form-field>
     
                 <mat-form-field appearance="outline">
-                  <mat-label>Phone number</mat-label>
+                  <mat-label>License plate number</mat-label>
                   <input matInput formControlName="recipientPhoneCtrl" required>
                   <mat-error *ngIf="recipientFormGroup.get('recipientPhoneCtrl')?.invalid">
                     <span *ngIf="recipientFormGroup.get('recipientPhoneCtrl')?.errors?.['required']">
@@ -111,7 +111,15 @@
                 </mat-form-field>
     
                 <mat-form-field appearance="outline">
-                  <mat-label>Pick-up address</mat-label>
+                  <mat-label>Current location (address)</mat-label>
+                  <textarea formControlName="deliveryAddressCtrl"  matInput required></textarea>
+                  <mat-error *ngIf="recipientFormGroup.get('deliveryAddressCtrl')?.hasError('required')">
+                    Your delivery address is required
+                  </mat-error> 
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Car description</mat-label>
                   <textarea formControlName="deliveryAddressCtrl"  matInput required></textarea>
                   <mat-error *ngIf="recipientFormGroup.get('deliveryAddressCtrl')?.hasError('required')">
                     Your delivery address is required
@@ -127,13 +135,35 @@
           </form>
         </mat-step>
 
-        <mat-step [stepControl]="packageFormGroup" label="Package Information">
+        <mat-step [stepControl]="packageFormGroup" label="Tow Service Information">
           <form [formGroup]="packageFormGroup">
             
             <div class="form-field-container">
               <mat-form-field appearance="outline">
-                  <mat-label>Number of package</mat-label>
-                  <input matInput type="number" formControlName="noOfPackageCtrl" required>
+                  <mat-label>Reason for towing</mat-label>
+                  <mat-select formControlName="noOfPackageCtrl" required>
+                    <mat-option value="Flat tire">Flat tire</mat-option>
+                    <mat-option value="Dead battery">Dead battery</mat-option>
+                    <mat-option value="Accident">Accident</mat-option>
+                    <mat-option value="Mechanical fault">Mechanical fault</mat-option>
+                    <mat-option value="Electrical fault">Electrical fault</mat-option>
+                    <mat-option value="Out of fuel">Out of fuel</mat-option>
+                    <mat-option value="Parking violation">Parking violation</mat-option>
+                    <mat-option value="Traffic violation">Traffic violation</mat-option>
+                    <mat-option value="Repossession">Repossession</mat-option>
+                    <mat-option value="Theft recovery">Theft recovery</mat-option>
+                    <mat-option value="Roadside assistance">Roadside assistance</mat-option>
+                    <mat-option value="Specialized transportation">Specialized transportation</mat-option>
+                    <mat-option value="Impoundment">Impoundment</mat-option>
+                    <mat-option value="Abandoned vehicle">Abandoned vehicle</mat-option>
+                    <mat-option value="Overheating">Overheating</mat-option>
+                    <mat-option value="Flood or natural disaster">Flood or natural disaster</mat-option>
+                    <mat-option value="Inaccessible location">Inaccessible location</mat-option>
+                    <mat-option value="Seized vehicle">Seized vehicle</mat-option>
+                    <mat-option value="Expired inspection or registration">Expired inspection or registration</mat-option>
+                    <mat-option value="Driving under the influence">Driving under the influence</mat-option>
+                    <mat-option value="Other reason">Other reason</mat-option>
+                  </mat-select>
                   <mat-error *ngIf="packageFormGroup.get('noOfPackageCtrl')?.invalid">
                     <span *ngIf="packageFormGroup.get('noOfPackageCtrl')?.errors?.['required']">
                       A number is required.
@@ -145,20 +175,7 @@
               </mat-form-field>
     
                 <mat-form-field appearance="outline">
-                  <mat-label>Estimated weight (kg)</mat-label>
-                  <input matInput type="number" formControlName="estimatedWeightCtrl" required>
-                  <mat-error *ngIf="packageFormGroup.get('estimatedWeightCtrl')?.invalid">
-                    <span *ngIf="packageFormGroup.get('estimatedWeightCtrl')?.errors?.['required']">
-                      Weight is required.
-                    </span>
-                    <span *ngIf="packageFormGroup.get('estimatedWeightCtrl')?.errors?.['pattern']">
-                      Please enter estimated weight of package.
-                    </span>
-                  </mat-error>
-                </mat-form-field>
-    
-                <mat-form-field appearance="outline">
-                  <mat-label>Content description</mat-label>
+                  <mat-label>Destination (address)</mat-label>
                   <textarea formControlName="descriptionCtrl" matInput required></textarea>
                   <mat-error *ngIf="packageFormGroup.get('descriptionCtrl')?.hasError('required')">
                     Give a little description about the package

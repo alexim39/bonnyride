@@ -42,7 +42,7 @@ import { CommonModule } from '@angular/common';
               <!-- <a mat-flat-button href="tel:09131301019" color="accent">CALL Towing Vehicle: 09131301019</a> -->
               <!-- <a mat-flat-button href="tel:09131301019" color="primary">CALL Delivery Service: 09131301019</a> -->
 
-              <a mat-flat-button href="tel:09131301019" color="accent">CALL for our service: 091 3130 1019</a>
+              <a mat-flat-button href="tel:09131301019" color="accent">CALL: 091 3130 1019</a>
               
               <!-- <a id="book-now" mat-raised-button color="accent" routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">BOOK FOR LATER</a> -->
             </div>
