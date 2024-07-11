@@ -58,7 +58,7 @@ import { RouterModule } from '@angular/router';
             </button>
           </mat-form-field>
 
-          <button mat-flat-button color="primary">Sign up</button>
+          <!-- <button mat-flat-button color="primary">Sign up</button> -->
         </form>
 
         <p>Already have an account? <a routerLink="../../../auth/partner" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign in</a></p>

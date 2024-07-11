@@ -142,8 +142,7 @@ export interface BookForLaterFormData {
 
 
         <div class="button-container">
-          <!-- <button mat-flat-button color="accent" [disabled]="!calculatedCost" (click)="calculateTransportationCost()">Check Price</button> -->
-          <button mat-raised-button color="primary" [disabled]="form.invalid || isSpinning || !calculatedCost">Pay to order now</button>
+          <!-- <button mat-raised-button color="primary" [disabled]="form.invalid || isSpinning || !calculatedCost">Pay to order now</button> -->
         </div>
 
         

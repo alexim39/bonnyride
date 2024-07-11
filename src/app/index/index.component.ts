@@ -19,12 +19,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
   template: `
   <async-nav id="nav"></async-nav>
   
-    <async-navbar></async-navbar>
+  <!-- <async-navbar></async-navbar> -->
     
-    <div id="container">
-      <router-outlet id="outlet"> </router-outlet>
-    </div>
-    <async-footer id="footer"></async-footer>
+  <div id="container">
+    <router-outlet id="outlet"> </router-outlet>
+  </div>
+
+  <async-footer id="footer"></async-footer>
   `,
   styles: [`
   `]

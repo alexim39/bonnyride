@@ -36,7 +36,7 @@ import { MatSelectModule } from '@angular/material/select';
 
         <div class="contact-details">
           <!-- <h1>Contact Us</h1> -->
-          <p>Giv us a call, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.</p>
+          <p>Give us a call, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.</p>
           <div class="address-wrapper">
             <div class="fa-icon">
               <div class="fa fa-globe" aria-hidden="true"></div>

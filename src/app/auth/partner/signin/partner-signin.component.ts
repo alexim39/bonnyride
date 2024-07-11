@@ -34,7 +34,7 @@ import { RouterModule } from '@angular/router';
             </button>
           </mat-form-field>
 
-          <button mat-flat-button color="primary">Sign in</button>
+          <!-- <button mat-flat-button color="primary">Sign in</button> -->
 
         </form>
 
