@@ -32,7 +32,7 @@ import { ThemeTogglerService } from '../_common/services/theme-toggler.service';
     DO NOT REMOVE
    THIS IS A TEMPORARY NOTIFICATION BANNER - FOR TRAILING EVENT 
   -->
-  <!-- <async-notification-banner></async-notification-banner> -->
+  <async-notification-banner></async-notification-banner>
 
 
    <mat-toolbar class="nav">

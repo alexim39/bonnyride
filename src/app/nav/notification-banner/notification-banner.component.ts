@@ -11,7 +11,9 @@ import { RouterModule } from '@angular/router';
   imports: [ RouterModule],
   template: `
     <section>
-        <p>Elevate your skills in Word, Excel, PowerPoint, Teams, and Outlook for maximum workplace productivity. <a routerLink="courses/details/64f1a27ce709366c3d55e247">JOIN LUNCH-TIME OFFICE TOOLS MASTERY SESSION NOW</a></p>
+        <p><!-- Elevate your skills in Word, Excel, PowerPoint, Teams, and Outlook for maximum workplace productivity. --> 
+          <a href="https://wa.me/message/GQ6P3GATFO4IB1" target="_blank">Take advantage of our free delivery offer while it lasts! Chat with us now!</a>
+        </p>
     </section>
   `,
   styles: [`
@@ -27,12 +29,33 @@ import { RouterModule } from '@angular/router';
         a {
             text-decoration: none;
             color: white; 
-            font-size: 1em;   
-            color: yellow;  
-            /* color: #ffab40;  */ 
+            font-size: 1.5em;   
+            color: orange;  
             font-weight: bolder;    
+        }
+
+        a {
+            animation: blink 1.5s infinite;
+            mat-icon {
+              font-size: 1.2em;
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     }
   `]
 })
-export class NotificationBannerComponent {}
+export class NotificationBannerComponent {
+
+  /* lunchWhatsAppGroup() {
+    window.open('https://wa.me/message/GQ6P3GATFO4IB1', '_blank');
+  } */
+
+}
