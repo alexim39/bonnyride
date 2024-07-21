@@ -26,7 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 
           <button mat-flat-button color="accent" disabled>Subscribe</button>
           <br>
-          <button mat-raised-button (click)="lunchWhatsAppGroup()"> <span class="fa fa-whatsapp"></span> WhatsApp Us</button>
+          <button mat-raised-button (click)="lunchWhatsAppGroup()"> <span class="fa fa-whatsapp"></span>Chat us on WhatsApp</button>
 
           <div id="social-media">
             <a href="#" class="fa fa-facebook" title="Facebook"></a>
@@ -124,6 +124,6 @@ import {MatInputModule} from '@angular/material/input';
 })
 export class FooterConnectedComponent {
   lunchWhatsAppGroup() {
-    window.open('https://wa.me/message/BQ4PN6TYXNE5D1', '_blank');
+    window.open('https://wa.me/message/GQ6P3GATFO4IB1', '_blank');
   }
 }

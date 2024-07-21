@@ -44,9 +44,18 @@ section {
           }
           .btn {
             a {
-             margin-left: 1em;
               font-family: cursive;
+              margin-right: 0.2em;
             }
+
+            button {
+              color: #075E54;
+              margin-left: 0.2em;
+              .fa-whatsapp {
+                font-size: 1.4em;
+              }
+            }
+           
           }
         }
       }

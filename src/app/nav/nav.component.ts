@@ -170,7 +170,7 @@ export class NavComponent implements OnInit, OnDestroy {
   }
 
   lunchWhatsAppGroup() {
-    window.open('https://wa.me/message/BQ4PN6TYXNE5D1', '_blank');
+    window.open('https://wa.me/message/GQ6P3GATFO4IB1', '_blank');
   }
 
 

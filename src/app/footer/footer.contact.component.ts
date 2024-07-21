@@ -70,7 +70,7 @@ export class FooterContactComponent {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  lunchWhatsAppGroup() {
+  /* lunchWhatsAppGroup() {
     window.open('https://wa.me/message/BQ4PN6TYXNE5D1', '_blank');
-  }
+  } */
 }

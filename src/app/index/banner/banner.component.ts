@@ -37,14 +37,8 @@ import { CommonModule } from '@angular/common';
             </h3>
 
             <div class="btn">
-              <!-- <a id="get-account" mat-raised-button routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ORDER INSTANT RIDE</a> -->
-              <!-- <a mat-flat-button routerLink="order-now" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Order Ride</a> -->
-              <!-- <a mat-flat-button href="tel:09131301019" color="accent">CALL Towing Vehicle: 09131301019</a> -->
-              <!-- <a mat-flat-button href="tel:09131301019" color="primary">CALL Delivery Service: 09131301019</a> -->
-
               <a mat-flat-button href="tel:09131301019" color="accent">CALL: 091 3130 1019</a>
-              
-              <!-- <a id="book-now" mat-raised-button color="accent" routerLink="book-later" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">BOOK FOR LATER</a> -->
+              <button mat-raised-button (click)="lunchWhatsAppGroup()"> <span class="fa fa-whatsapp"></span>Chat us on WhatsApp</button>
             </div>
           </article>
 
@@ -68,7 +62,7 @@ export class BannerComponent implements OnInit, OnDestroy  {
   ngOnInit(): void {}
 
   lunchWhatsAppGroup() {
-    window.open('https://wa.me/message/BQ4PN6TYXNE5D1', '_blank');
+    window.open('https://wa.me/message/GQ6P3GATFO4IB1', '_blank');
   }
 
   ngOnDestroy(): void {
