@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   template: `
     <a [routerLink]="['/']" [style.color]="color">
       <!-- <span><mat-icon [style.margin-top]="marginTop">sync</mat-icon>Async SkillUp</span> -->
-      <span><mat-icon [style.margin-top]="marginTop">sync</mat-icon>BonnyRide</span>
+      <span><mat-icon [style.margin-top]="marginTop">sync</mat-icon>BonnyRide Logistics</span>
     </a>
   `,
   styles: [`
